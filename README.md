@@ -1,7 +1,7 @@
 - 👋 Hi, I’m @akshaysatyam2
 - 👀 I’m interested in ***Data Science***.
 - 🌱 I’m currently learning ***Deep Learning***.
-- :ok_hand: Also have the knowlege of ***Machine Learning***, ***Web Devlopment*** and ***Data Analytics*** using Python as well as Java.
+- :ok_hand: Also have the knowlege of ***Machine Learning***, ***Web Devlopment*** and ***Data Analytics*** using Python and ***Web Devlopment*** with Java.
 - 💞️ I’m looking to collaborate on ***Data Science*** and ***Machine Learning Projects***.
 - 📫 You can reach me on ***LinkedIn***<sup>(link on profile)</sup>.
 - :handshake: Feel free to go through my projects and suggest improvements through LinkedIn.
