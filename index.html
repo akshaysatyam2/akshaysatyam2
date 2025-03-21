@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akshay Kumar - ML Engineer</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <style>
+        :root {
+            --primary-color: #0d6efd;
+            --secondary-color: #6c757d;
+            --dark-color: #212529;
+            --light-color: #f8f9fa;
+            --success-color: #198754;
+            --info-color: #0dcaf0;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark-color);
+            background-color: #f5f5f5;
+            position: relative;
+            min-height: 100vh;
+            padding-bottom: 60px;
+        }
+
+        .navbar {
+            background-color: rgba(33, 37, 41, 0.95) !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #0d6efd 0%, #198754 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+            color: white;
+            margin: 0 5px;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            transform: translateY(-3px);
+        }
+
+        .social-linkedin { background-color: #0077B5; }
+        .social-github { background-color: #333; }
+        .social-kaggle { background-color: #20BEFF; }
+        .social-instagram { background-color: #E1306C; }
+        .social-twitter { background-color: #1DA1F2; }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 40px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-header {
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 10px 10px 0 0 !important;
+            font-weight: 600;
+        }
+
+        .experience-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 30px;
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+        }
+
+        .experience-item::after {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 20px;
+            width: 2px;
+            height: calc(100% + 10px);
+            background-color: var(--primary-color);
+        }
+
+        .experience-item:last-child::after {
+            display: none;
+        }
+
+        .skill-badge {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            margin: 5px;
+            display: inline-block;
+            font-size: 0.9rem;
+        }
+
+        .project-card {
+            margin-bottom: 20px;
+        }
+
+        .github-stats {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .github-stats img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 10px 0;
+        }
+
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--secondary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        
+        /* Improved text contrast */
+        .card-text, .lead, p {
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Better visibility for project cards */
+        .project-card .card-body {
+            padding: 1.5rem;
+        }
+        
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            z-index: 1000;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+        }
+
+        @media screen and (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .section-title::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .section-title {
+                text-align: center;
+            }
+            
+            .experience-item {
+                padding-left: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Akshay Kumar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12 text-center" data-aos="fade-up">
+                    <img src="https://www.pupsn.com/_next/image?url=%2Fmedia%2Fpeople%2FAkshay%2FAkshay1.jpg&w=256&q=75" alt="Akshay Kumar" class="profile-img mb-4">
+                    <h1 class="display-4 fw-bold mb-3">Akshay Kumar</h1>
+                    <h3 class="mb-4">Machine Learning Engineer</h3>
+                    <p class="lead mb-4">Specialized in Computer Vision, NLP, and Deep Learning</p>
+                    <div class="social-icons mb-4">
+                        <a href="https://www.linkedin.com/in/akshaysatyam2/" target="_blank" class="social-linkedin">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/akshaysatyam2" target="_blank" class="social-github">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.kaggle.com/akshaysatyam2" target="_blank" class="social-kaggle">
+                            <i class="fab fa-kaggle"></i>
+                        </a>
+                        <a href="https://www.instagram.com/akshaysatyam2/" target="_blank" class="social-instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://twitter.com/akshaysatyam2" target="_blank" class="social-twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                    <a href="#contact" class="btn btn-light btn-lg px-4 me-md-2">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12" data-aos="fade-up">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="lead">
+                        I am a <strong>Machine Learning Engineer</strong> with expertise in deploying real-time computer vision models on edge devices, developing ChatBots, and building Retrieval-Augmented Generation (RAG) systems for document-based question answering.
+                    </p>
+                    <p>
+                        With 1+ years of experience in creating production-ready AI solutions, I specialize in developing high-accuracy computer vision systems (95%+) and working with advanced Large Language Models (LLMs). My primary focus is on enhancing my knowledge and skills in <strong>Computer Vision</strong>, <strong>Natural Language Processing (NLP)</strong>, and <strong>Deep Learning</strong>.
+                    </p>
+                    <p>
+                        I'm passionate about solving complex problems and delivering exceptional results in fast-paced and dynamic environments. My expertise includes the full ML pipeline development from data preparation to deployment, with a strong focus on scalable MLOps practices.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12" data-aos="fade-up">
+                    <h2 class="section-title">Work Experience</h2>
+                    
+                    <div class="experience-item">
+                        <h4>Machine Learning Engineer</h4>
+                        <h6>Loksun.ai, Bengaluru, KA</h6>
+                        <p class="text-muted">Jan 2025 – Present</p>
+                        <ul>
+                            <li>Developed a real-time PPE Detection System with frame dropping and ROI functionality, fine-tuning YOLOv11n on a 50% custom dataset to achieve mAP50: 0.8718 and mAP50-95: 0.5999, improving detection accuracy from 70% to ~95%.</li>
+                            <li>Enhanced voice-to-person recognition through optimized signal processing and developed an AI agent using Bedrock Claude for automated blog creation with SEO and image generation.</li>
+                            <li>Built a multi-source Facial Recognition System (FRS) for security monitoring and access control, capable of matching faces across multiple profiles.</li>
+                            <li>Created a Retrieval-Augmented Generation (RAG) system using the Gemini model and developed AI agents for email generation and document processing.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <h4>AI/ML Intern</h4>
+                        <h6>Techdome Solutions, Indore, MP</h6>
+                        <p class="text-muted">Oct 2023 – Feb 2024</p>
+                        <ul>
+                            <li>Developed and deployed Catalyst, an AzureEdge application for video feed and sensor data processing, using YOLO for detection (mAP: 0.72) and SORT for tracking, integrated with Kafka and HiveMQ (MQTT).</li>
+                            <li>Built ChatWithData, a chatbot for natural language queries providing data insights as graphs, text summaries, and visualizations.</li>
+                            <li>Developed a Resume Processer using RAG to extract and store relevant data from resumes.</li>
+                            <li>Worked on multiple projects with Generative AI and Transformer NLP models.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <h4>Assoc. Solution Developer</h4>
+                        <h6>Quadwave Consulting, Pune, MH</h6>
+                        <p class="text-muted">Aug 2022 – Jan 2023</p>
+                        <ul>
+                            <li>Worked on Econsys V4, a business management system for specialist contracting firms.</li>
+                            <li>Developed backend services using Java (Liferay, JSP, Servlets, and JBPM) and assisted in unit testing & module implementation.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12" data-aos="fade-up">
+                    <h2 class="section-title">Education</h2>
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h4>Bachelor in Computer Application and Cyber Security (BCACS)</h4>
+                            <h6>Jharkhand Raksha Shakti University, Ranchi, JH</h6>
+                            <p class="text-muted">2020 - 2023</p>
+                            <p><strong>CGPA:</strong> 8.41</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12" data-aos="fade-up">
+                    <h2 class="section-title">Technical Skills</h2>
+                    
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <div class="card mb-4">
+                                <div class="card-header">Machine Learning & AI</div>
+                                <div class="card-body">
+                                    <span class="skill-badge">Computer Vision</span>
+                                    <span class="skill-badge">NLP</span>
+                                    <span class="skill-badge">Deep Learning</span>
+                                    <span class="skill-badge">Machine Learning</span>
+                                    <span class="skill-badge">LLMs</span>
+                                    <span class="skill-badge">RAG</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card mb-4">
+                                <div class="card-header">Frameworks & Libraries</div>
+                                <div class="card-body">
+                                    <span class="skill-badge">TensorFlow</span>
+                                    <span class="skill-badge">OpenCV</span>
+                                    <span class="skill-badge">YOLO</span>
+                                    <span class="skill-badge">scikit-learn</span>
+                                    <span class="skill-badge">Pandas</span>
+                                    <span class="skill-badge">NumPy</span>
+                                    <span class="skill-badge">Hugging Face</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <div class="card mb-4">
+                                <div class="card-header">Cloud & Infrastructure</div>
+                                <div class="card-body">
+                                    <span class="skill-badge">AWS (Bedrock)</span>
+                                    <span class="skill-badge">Azure (AzureEdge)</span>
+                                    <span class="skill-badge">Docker</span>
+                                    <span class="skill-badge">MLOps</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card mb-4">
+                                <div class="card-header">Data Engineering & Development</div>
+                                <div class="card-body">
+                                    <span class="skill-badge">SQL</span>
+                                    <span class="skill-badge">NoSQL</span>
+                                    <span class="skill-badge">Kafka</span>
+                                    <span class="skill-badge">MQTT</span>
+                                    <span class="skill-badge">Git</span>
+                                    <span class="skill-badge">FastAPI</span>
+                                    <span class="skill-badge">Flask</span>
+                                    <span class="skill-badge">CI/CD</span>
+                                    <span class="skill-badge">Linux</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12" data-aos="fade-up">
+                    <h2 class="section-title">Projects</h2>
+                    
+                    <div class="row">
+                        <!-- Project 1 -->
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="card project-card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">Traffic Monitoring</h5>
+                                    <p class="card-text">
+                                        A system to monitor road traffic using video feeds, leveraging YOLOv8 for object detection and SORT for tracking. The model accurately detects and tracks vehicles in real-time, with EasyOCR for text extraction.
+                                    </p>
+                                    <div class="mt-3">
+                                        <span class="badge bg-primary me-1">YOLO</span>
+                                        <span class="badge bg-primary me-1">EasyOCR</span>
+                                        <span class="badge bg-primary me-1">OpenCV</span>
+                                        <span class="badge bg-primary me-1">SORT</span>
+                                    </div>
+                                </div>
+                                <div class="card-footer bg-transparent border-top-0">
+                                    <a href="https://github.com/akshaysatyam2/Traffic-Monitoring" target="_blank" class="btn btn-sm btn-outline-primary">
+                                        <i class="fab fa-github me-1"></i> View on GitHub
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Project 2 -->
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="card project-card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">RAG Model Framework</h5>
+                                    <p class="card-text">
+                                        Open-source Retrieval-Augmented Generation model for document-based question answering. Supports multiple file formats and leverages pre-trained models for retrieval, re-ranking and summarization.
+                                    </p>
+                                    <div class="mt-3">
+                                        <span class="badge bg-primary me-1">Python</span>
+                                        <span class="badge bg-primary me-1">Transformers</span>
+                                        <span class="badge bg-primary me-1">Flask</span>
+                                        <span class="badge bg-primary me-1">RAG</span>
+                                    </div>
+                                </div>
+                                <div class="card-footer bg-transparent border-top-0">
+                                    <a href="https://github.com/akshaysatyam2/RAG-Framework" target="_blank" class="btn btn-sm btn-outline-primary">
+                                        <i class="fab fa-github me-1"></i> View on GitHub
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Project 3 -->
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="card project-card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">Test Cheating Detection</h5>
+                                    <p class="card-text">
+                                        Real-time cheating detection system using computer vision. Tracks head orientation, detects unauthorized devices, identifies individuals, and sends alerts for cheating.
+                                    </p>
+                                    <div class="mt-3">
+                                        <span class="badge bg-primary me-1">Python</span>
+                                        <span class="badge bg-primary me-1">YOLO</span>
+                                        <span class="badge bg-primary me-1">OpenCV</span>
+                                        <span class="badge bg-primary me-1">MediaPipe</span>
+                                    </div>
+                                </div>
+                                <div class="card-footer bg-transparent border-top-0">
+                                    <a href="https://github.com/akshaysatyam2/Test-Cheating-Detection" target="_blank" class="btn btn-sm btn-outline-primary">
+                                        <i class="fab fa-github me-1"></i> View on GitHub
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 4 -->
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="card project-card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">Face Recognition Attendance System</h5>
+                                    <p class="card-text">
+                                        An automated attendance system using facial recognition. Captures, processes, and logs attendance data using computer vision techniques.
+                                    </p>
+                                    <div class="mt-3">
+                                        <span class="badge bg-primary me-1">Python</span>
+                                        <span class="badge bg-primary me-1">OpenCV</span>
+                                        <span class="badge bg-primary me-1">dlib</span>
+                                        <span class="badge bg-primary me-1">face_recognition</span>
+                                    </div>
+                                </div>
+                                <div class="card-footer bg-transparent border-top-0">
+                                    <a href="https://github.com/akshaysatyam2/Face_Recognition_System" target="_blank" class="btn btn-sm btn-outline-primary">
+                                        <i class="fab fa-github me-1"></i> View on GitHub
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 5 -->
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="card project-card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">Web Scrapping</h5>
+                                    <p class="card-text">
+                                        A collection of web scraping scripts and tools to extract structured data from various websites for analysis and processing.
+                                    </p>
+                                    <div class="mt-3">
+                                        <span class="badge bg-primary me-1">Python</span>
+                                        <span class="badge bg-primary me-1">BeautifulSoup</span>
+                                        <span class="badge bg-primary me-1">Selenium</span>
+                                        <span class="badge bg-primary me-1">Scrapy</span>
+                                    </div>
+                                </div>
+                                <div class="card-footer bg-transparent border-top-0">
+                                    <a href="https://github.com/akshaysatyam2/Web-Scrapping" target="_blank" class="btn btn-sm btn-outline-primary">
+                                        <i class="fab fa-github me-1"></i> View on GitHub
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 6 -->
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="card project-card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">AI Workspace</h5>
+                                    <p class="card-text">
+                                        A comprehensive collection of AI tools, notebooks, and templates for various machine learning and data science tasks.
+                                    </p>
+                                    <div class="mt-3">
+                                        <span class="badge bg-primary me-1">Python</span>
+                                        <span class="badge bg-primary me-1">TensorFlow</span>
+                                        <span class="badge bg-primary me-1">Jupyter</span>
+                                        <span class="badge bg-primary me-1">ML Models</span>
+                                    </div>
+                                </div>
+                                <div class="card-footer bg-transparent border-top-0">
+                                    <a href="https://github.com/akshaysatyam2/AI-Workspace" target="_blank" class="btn btn-sm btn-outline-primary">
+                                        <i class="fab fa-github me-1"></i> View on GitHub
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- GitHub Stats -->
+                    <div class="github-stats mt-5" data-aos="fade-up">
+                        <h3 class="mb-4">GitHub Stats</h3>
+                        <div class="row">
+                            <!-- GitHub Stats Card -->
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-body text-center">
+                                        <img 
+                                            src="https://github-readme-stats.vercel.app/api?username=akshaysatyam2&show_icons=true&theme=dark&hide_border=true&count_private=true" 
+                                            alt="GitHub Stats" 
+                                            class="img-fluid"
+                                        >
+                                        <p class="text-muted mt-2">GitHub Activity Overview</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Top Languages Card -->
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-body text-center">
+                                        <img 
+                                            src="https://github-readme-stats.vercel.app/api/top-langs/?username=akshaysatyam2&layout=compact&theme=dark&hide_border=true&langs_count=8" 
+                                            alt="Top Languages" 
+                                            class="img-fluid"
+                                        >
+                                        <p class="text-muted mt-2">Most Used Languages</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- GitHub Streak Stats -->
+                        <div class="row mt-4">
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <img 
+                                            src="https://streak-stats.demolab.com?user=akshaysatyam2&theme=dark&hide_border=true" 
+                                            alt="GitHub Streak Stats" 
+                                            class="img-fluid"
+                                        >
+                                        <p class="text-muted mt-2">GitHub Contribution Streak</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center" data-aos="fade-up">
+                    <h2 class="section-title mx-auto">Contact Me</h2>
+                    <p class="lead mb-4">Have a project in mind? Let's discuss how we can work together.</p>
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <i class="fas fa-envelope text-primary me-2"></i>
+                                        <a href="mailto:akshaysatyam2003@gmail.com" class="text-decoration-none">akshaysatyam2003@gmail.com</a>
+                                    </div>
+                                    <div class="mb-3">
+                                        <i class="fas fa-phone text-primary me-2"></i>
+                                        <a href="tel:+917488269891" class="text-decoration-none">+91 7488269891</a>
+                                    </div>
+                                    <div>
+                                        <i class="fab fa-linkedin text-primary me-2"></i>
+                                        <a href="https://www.linkedin.com/in/akshaysatyam2/" target="_blank" class="text-decoration-none">linkedin.com/in/akshaysatyam2</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to top button -->
+    <a class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="mb-0">&copy; 2024 Akshay Kumar. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <!-- Custom Script -->
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
