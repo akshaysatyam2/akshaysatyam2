@@ -16,36 +16,45 @@
     
     <style>
         :root {
-            --primary-color: #0d6efd;
-            --secondary-color: #6c757d;
-            --dark-color: #212529;
-            --light-color: #f8f9fa;
-            --success-color: #198754;
-            --info-color: #0dcaf0;
-            --warning-color: #ffc107;
-            --danger-color: #dc3545;
+            --primary-color: #0d6efd; /* Blue for accents */
+            --secondary-color: #6c757d; /* Gray for secondary elements */
+            --background-color: linear-gradient(135deg, #f0f0f0 0%, #e6f7ff 100%); /* Light gray to light blue */
+            --card-background: white; /* White for cards */
+            --text-color: #333; /* Dark gray for text */
+            --hover-color: rgba(13, 110, 253, 0.1); /* Light blue for hover effects */
+            --dark-gray: #333; /* Dark gray for header and footer */
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: var(--dark-color);
-            background-color: #f5f5f5;
+            color: var(--text-color);
+            background: var(--background-color); /* Gradient background */
             position: relative;
             min-height: 100vh;
             padding-bottom: 60px;
         }
 
+        /* Header (Navbar) */
         .navbar {
-            background-color: rgba(33, 37, 41, 0.95) !important;
+            background-color: var(--dark-gray) !important; /* Dark gray background */
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
+        .navbar-dark .navbar-nav .nav-link {
+            color: white !important; /* White text for better contrast */
+        }
+
+        .navbar-dark .navbar-nav .nav-link:hover {
+            color: var(--primary-color) !important; /* Blue hover effect */
+        }
+
+        /* Hero Section */
         .hero-section {
-            background: linear-gradient(135deg, #0d6efd 0%, #198754 100%);
-            color: white;
+            background: var(--background-color); /* Gradient background */
+            color: var(--text-color); /* Dark gray text for readability */
             padding: 100px 0;
             text-align: center;
         }
@@ -104,10 +113,12 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
             height: 100%;
+            background-color: var(--card-background);
         }
 
         .card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
 
         .card-header {
@@ -174,45 +185,35 @@
             margin: 10px 0;
         }
 
+        /* Footer */
         footer {
-            background-color: var(--dark-color);
-            color: white;
+            background-color: var(--dark-gray); /* Dark gray background */
+            color: white; /* White text for better contrast */
             text-align: center;
             padding: 20px 0;
             position: absolute;
             bottom: 0;
             width: 100%;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
         }
 
-        .timeline {
-            position: relative;
-            max-width: 1200px;
-            margin: 0 auto;
+        /* Contact Section */
+        #contact {
+            background-color: #f0f0f0; /* Light gray background */
+            padding: 60px 0;
         }
 
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 6px;
-            background-color: var(--secondary-color);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -3px;
+        #contact .card {
+            background-color: white; /* White card background */
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        
-        /* Improved text contrast */
-        .card-text, .lead, p {
-            color: #333;
-            line-height: 1.6;
-        }
-        
-        /* Better visibility for project cards */
-        .project-card .card-body {
+
+        #contact .card-body {
             padding: 1.5rem;
         }
-        
-        /* Back to top button */
+
         .back-to-top {
             position: fixed;
             bottom: 20px;
@@ -235,10 +236,6 @@
         }
 
         @media screen and (max-width: 768px) {
-            .timeline::after {
-                left: 31px;
-            }
-            
             .section-title::after {
                 left: 50%;
                 transform: translateX(-50%);
@@ -256,7 +253,7 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="#">Akshay Kumar</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -331,9 +328,12 @@
                     <p>
                         With 1+ years of experience in creating production-ready AI solutions, I specialize in developing high-accuracy computer vision systems (95%+) and working with advanced Large Language Models (LLMs). My primary focus is on enhancing my knowledge and skills in <strong>Computer Vision</strong>, <strong>Natural Language Processing (NLP)</strong>, and <strong>Deep Learning</strong>.
                     </p>
-                    <p>
-                        I'm passionate about solving complex problems and delivering exceptional results in fast-paced and dynamic environments. My expertise includes the full ML pipeline development from data preparation to deployment, with a strong focus on scalable MLOps practices.
-                    </p>
+                    <div class="mt-4">
+                        <h4>Founder of <a href="https://www.pupsn.com" target="_blank" class="text-decoration-none">PupsN.com</a></h4>
+                        <p>
+                            I am the founder of <strong>PupsN.com</strong>, a platform dedicated to providing high-quality resources and tools for pet lovers and professionals. Our mission is to make pet care more accessible and enjoyable through innovative solutions.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
