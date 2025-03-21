@@ -5,6 +5,9 @@
 [![Kaggle](https://img.shields.io/badge/Kaggle-akshaysatyam2-orange?style=flat-square&logo=kaggle)](https://www.kaggle.com/akshaysatyam2)
 [![Instagram](https://img.shields.io/badge/Instagram-akshaysatyam2-purple?style=flat-square&logo=instagram)](https://www.instagram.com/akshaysatyam2/)
 [![X (Twitter)](https://img.shields.io/badge/X%20(Twitter)-akshaysatyam2-blue?style=flat-square&logo=twitter)](https://twitter.com/akshaysatyam2)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Akshay%20Kumar-green?style=flat-square)](https://akshaysatyam2.github.io)
+
+---
 
 ## Professional Dashboard
 
@@ -24,15 +27,38 @@ I am a **Machine Learning Engineer** with expertise in deploying real-time compu
 </div>
 
 ---
+
 ### **Skills**
 
-- **Technical Skills**: Computer Vision, NLP, Deep Learning, Machine Learning, Data Science
+#### **Technical Skills**
+- **Machine Learning & AI**: Computer Vision, NLP, Deep Learning, LLMs, RAG
 - **Languages**: Python, SQL, NoSQL
 - **Technologies**: TensorFlow, OpenCV, YOLO, Docker, Git
 - **Frameworks & Libraries**: Hugging Face Transformers, PandasAI, Scikit-learn
 - **Tools & Platforms**: Kafka, MQTT (HiveMQ), Azure Edge, MediaPipe, GitHub
 
+#### **Cloud & Infrastructure**
+- AWS (Bedrock), Azure (AzureEdge), Docker, MLOps
+
+#### **Data Engineering & Development**
+- SQL, NoSQL, Kafka, MQTT, FastAPI, Flask, CI/CD, Linux
+
 ---
+
+### **Portfolio**
+Check out my portfolio to explore my projects and work:  
+[![Portfolio](https://img.shields.io/badge/Portfolio-Akshay%20Kumar-green?style=flat-square)](https://akshaysatyam2.github.io)
+
+---
+
 ### **Contact**
 
-- **Email**: akshaysatyam2003@gmail.com
+- **Email**: [akshaysatyam2003@gmail.com](mailto:akshaysatyam2003@gmail.com)
+- **Phone**: [+91 7488269891](tel:+917488269891)
+- **LinkedIn**: [akshaysatyam2](https://www.linkedin.com/in/akshaysatyam2/)
+- **GitHub**: [akshaysatyam2](https://github.com/akshaysatyam2)
+
+---
+
+### **Let's Connect!**
+Feel free to reach out for collaborations, discussions, or just to say hi! 😊
