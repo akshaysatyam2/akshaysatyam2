@@ -5,7 +5,7 @@
 [![Kaggle](https://img.shields.io/badge/Kaggle-akshaysatyam2-orange?style=flat-square&logo=kaggle)](https://www.kaggle.com/akshaysatyam2)
 [![Instagram](https://img.shields.io/badge/Instagram-akshaysatyam2-purple?style=flat-square&logo=instagram)](https://www.instagram.com/akshaysatyam2/)
 [![X (Twitter)](https://img.shields.io/badge/X%20(Twitter)-akshaysatyam2-blue?style=flat-square&logo=twitter)](https://twitter.com/akshaysatyam2)
-[![Portfolio](https://img.shields.io/badge/Portfolio-Akshay%20Kumar-green?style=flat-square)](https://akshaysatyam2.github.io)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Akshay%20Kumar-green?style=flat-square)](https://akshaysatyam2.github.io/akshaysatyam2/)
 
 ---
 
@@ -47,7 +47,7 @@ I am a **Machine Learning Engineer** with expertise in deploying real-time compu
 
 ### **Portfolio**
 Check out my portfolio to explore my projects and work:  
-[![Portfolio](https://img.shields.io/badge/Portfolio-Akshay%20Kumar-green?style=flat-square)](https://akshaysatyam2.github.io)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Akshay%20Kumar-green?style=flat-square)](https://akshaysatyam2.github.io/akshaysatyam2/)
 
 ---
 
