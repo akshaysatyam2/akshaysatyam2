@@ -21,7 +21,8 @@
         :root {
             --primary-color: #0d6efd; /* Blue for accents */
             --secondary-color: #6c757d; /* Gray for secondary elements */
-            --background-color: linear-gradient(135deg, #f0f0f0 0%, #e6f7ff 100%); /* Light gray to light blue */
+            --background: linear-gradient(135deg, whitesmoke, lightgray, lightblue);
+            --background-attachment: fixed;
             --card-background: white; /* White for cards */
             --text-color: #333; /* Dark gray for text */
             --hover-color: rgba(13, 110, 253, 0.1); /* Light blue for hover effects */
@@ -31,7 +32,8 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: var(--text-color);
-            background: var(--background-color); /* Gradient background */
+            background: linear-gradient(135deg, whitesmoke, lightgray, lightblue);
+            background-attachment: fixed;
             position: relative;
             min-height: 100vh;
             padding-bottom: 60px;
@@ -202,7 +204,7 @@
 
         /* Contact Section */
         #contact {
-            background-color: #f0f0f0; /* Light gray background */
+            /* background-color: #f0f0f0; Light gray background */
             padding: 60px 0;
         }
 
@@ -313,7 +315,7 @@
                             <i class="fab fa-twitter"></i>
                         </a>
                     </div>
-                    <a href="#contact" class="btn btn-light btn-lg px-4 me-md-2">Contact Me</a>
+                    <a href="#contact" class="btn btn-dark btn-lg px-4 me-md-2">Contact Me</a>
                 </div>
             </div>
         </div>
@@ -323,7 +325,7 @@
     <section id="about" class="py-5">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12" data-aos="fade-up">
+                <div class="col-lg-12">
                     <h2 class="section-title">About Me</h2>
                     <p class="lead">
                         I am a <strong>Machine Learning Engineer</strong> with expertise in deploying real-time computer vision models on edge devices, developing ChatBots, and building Retrieval-Augmented Generation (RAG) systems for document-based question answering.
@@ -343,7 +345,7 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="py-5 bg-light">
+    <section id="experience" class="py-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12" data-aos="fade-up">
@@ -407,7 +409,7 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-5 bg-light">
+    <section id="skills" class="py-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12" data-aos="fade-up">
@@ -609,7 +611,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-5 bg-light">
+    <section id="contact" class="py-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center" data-aos="fade-up">
