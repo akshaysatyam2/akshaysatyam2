@@ -12,7 +12,7 @@
 ## Professional Dashboard
 
 ### **About Me**
-I am a **Machine Learning Engineer** with expertise in deploying real-time computer vision models on edge devices, developing ChatBots, and building Retrieval-Augmented Generation (RAG) systems for document-based question answering. My primary focus is on enhancing my knowledge and skills in **Computer Vision**, **Natural Language Processing (NLP)**, and **Deep Learning**. I am passionate about solving complex problems and delivering exceptional results in fast-paced and dynamic environments.
+I am a **Computer Vision Engineer** with expertise in deploying real-time computer vision models on edge devices, developing ChatBots, and building Retrieval-Augmented Generation (RAG) systems for document-based question answering. My primary focus is on enhancing my knowledge and skills in **Computer Vision**, **Natural Language Processing (NLP)**, and **Deep Learning**. I am passionate about solving complex problems and delivering exceptional results in fast-paced and dynamic environments.
 
 ---
 
