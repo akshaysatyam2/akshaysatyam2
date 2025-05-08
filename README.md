@@ -38,7 +38,7 @@ I am a **Machine Learning Engineer** with expertise in deploying real-time compu
 - **Tools & Platforms**: Kafka, MQTT (HiveMQ), Azure Edge, MediaPipe, GitHub
 
 #### **Cloud & Infrastructure**
-- AWS (Bedrock), Azure (AzureEdge), Docker, MLOps
+- AWS (Bedrock, Lambda), Azure (AzureEdge), Docker, MLOps
 
 #### **Data Engineering & Development**
 - SQL, NoSQL, Kafka, MQTT, FastAPI, Flask, CI/CD, Linux
