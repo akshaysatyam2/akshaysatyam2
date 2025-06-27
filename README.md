@@ -54,7 +54,6 @@ Check out my portfolio to explore my projects and work:
 ### **Contact**
 
 - **Email**: [akshaysatyam2003@gmail.com](mailto:akshaysatyam2003@gmail.com)
-- **Phone**: [+91 7488269891](tel:+917488269891)
 - **LinkedIn**: [akshaysatyam2](https://www.linkedin.com/in/akshaysatyam2/)
 - **GitHub**: [akshaysatyam2](https://github.com/akshaysatyam2)
 
