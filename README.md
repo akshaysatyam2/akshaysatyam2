@@ -3,7 +3,6 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-akshaysatyam2-blue?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/akshaysatyam2/)
 [![GitHub](https://img.shields.io/badge/GitHub-akshaysatyam2-black?style=flat-square&logo=github)](https://github.com/akshaysatyam2)
 [![Kaggle](https://img.shields.io/badge/Kaggle-akshaysatyam2-orange?style=flat-square&logo=kaggle)](https://www.kaggle.com/akshaysatyam2)
-[![Instagram](https://img.shields.io/badge/Instagram-akshaysatyam2-purple?style=flat-square&logo=instagram)](https://www.instagram.com/akshaysatyam2/)
 [![X (Twitter)](https://img.shields.io/badge/X%20(Twitter)-akshaysatyam2-blue?style=flat-square&logo=twitter)](https://twitter.com/akshaysatyam2)
 [![Portfolio](https://img.shields.io/badge/Portfolio-Akshay%20Kumar-green?style=flat-square)](https://akshaysatyam2.github.io/akshaysatyam2/)
 
