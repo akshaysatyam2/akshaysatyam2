@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Akshay Kumar - Applied ML Engineer</title>
-        
-        <!-- Favicon -->
-        <link rel="icon" href="https://www.pupsn.com/media/favicon/logo1/favicon.ico" type="image/x-icon">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akshay Kumar - Applied ML Engineer</title>
     
+    <!-- Favicon -->
+    <link rel="icon" href="https://www.pupsn.com/media/favicon/logo1/favicon.ico" type="image/x-icon">
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
@@ -19,81 +19,50 @@
     
     <style>
         :root {
-            --primary-color: #0d6efd; /* Blue for accents */
-            --secondary-color: #6c757d; /* Gray for secondary elements */
+            --primary-color: #0d6efd;
+            --secondary-color: #6c757d;
             --background: linear-gradient(135deg, whitesmoke, lightgray, lightblue);
             --background-attachment: fixed;
-            --card-background: white; /* White for cards */
-            --text-color: #333; /* Dark gray for text */
-            --hover-color: rgba(13, 110, 253, 0.1); /* Light blue for hover effects */
-            --dark-gray: #333; /* Dark gray for header and footer */
+            --card-background: white;
+            --text-color: #333;
+            --hover-color: rgba(13, 110, 253, 0.1);
+            --dark-gray: #333;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: var(--text-color);
-            background: linear-gradient(135deg, whitesmoke, lightgray, lightblue);
-            background-attachment: fixed;
+            background: var(--background);
+            background-attachment: var(--background-attachment);
             position: relative;
             min-height: 100vh;
             padding-bottom: 60px;
         }
 
-        /* Header (Navbar) */
         .navbar {
-            background-color: var(--dark-gray) !important; /* Dark gray background */
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: var(--dark-gray) !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
-
         .navbar-dark .navbar-nav .nav-link {
-            color: white !important; /* White text for better contrast */
+            color: white !important;
         }
-
         .navbar-dark .navbar-nav .nav-link:hover {
-            color: var(--primary-color) !important; /* Blue hover effect */
+            color: var(--primary-color) !important;
         }
 
-        /* Hero Section */
         .hero-section {
-            background: var(--background-color); /* Gradient background */
-            color: var(--text-color); /* Dark gray text for readability */
             padding: 100px 0;
             text-align: center;
         }
-
-        .profile-img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        .hero-section h1 {
+            color: var(--primary-color);
         }
-
-        .social-icons a {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            line-height: 40px;
-            text-align: center;
-            border-radius: 50%;
-            color: white;
-            margin: 0 5px;
-            transition: all 0.3s;
+        .hero-section p {
+            font-size: 1.1rem;
         }
-
-        .social-icons a:hover {
-            transform: translateY(-3px);
-        }
-
-        .social-linkedin { background-color: #0077B5; }
-        .social-github { background-color: #333; }
-        .social-kaggle { background-color: #20BEFF; }
-        .social-instagram { background-color: #E1306C; }
-        .social-twitter { background-color: #1DA1F2; }
 
         .section-title {
             position: relative;
@@ -101,7 +70,6 @@
             font-weight: 700;
             color: var(--primary-color);
         }
-
         .section-title::after {
             content: '';
             position: absolute;
@@ -115,15 +83,9 @@
         .card {
             border: none;
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-            height: auto;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
             background-color: var(--card-background);
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
 
         .card-header {
@@ -138,7 +100,6 @@
             padding-left: 30px;
             margin-bottom: 30px;
         }
-
         .experience-item::before {
             content: '';
             position: absolute;
@@ -149,7 +110,6 @@
             border-radius: 50%;
             background-color: var(--primary-color);
         }
-
         .experience-item::after {
             content: '';
             position: absolute;
@@ -159,7 +119,6 @@
             height: calc(100% + 10px);
             background-color: var(--primary-color);
         }
-
         .experience-item:last-child::after {
             display: none;
         }
@@ -174,85 +133,15 @@
             font-size: 0.9rem;
         }
 
-        .project-card {
-            margin-bottom: 20px;
-        }
-
-        .github-stats {
-            text-align: center;
-            margin: 30px 0;
-        }
-
-        .github-stats img {
-            max-width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin: 10px 0;
-        }
-
-        /* Footer */
         footer {
-            background-color: var(--dark-gray); /* Dark gray background */
-            color: white; /* White text for better contrast */
+            background-color: var(--dark-gray);
+            color: white;
             text-align: center;
             padding: 20px 0;
             position: absolute;
             bottom: 0;
             width: 100%;
-            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Contact Section */
-        #contact {
-            /* background-color: #f0f0f0; Light gray background */
-            padding: 60px 0;
-        }
-
-        #contact .card {
-            background-color: white; /* White card background */
-            border: none;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        #contact .card-body {
-            padding: 0.5rem !important;
-        }
-
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: var(--primary-color);
-            color: white;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            line-height: 40px;
-            text-align: center;
-            z-index: 1000;
-            cursor: pointer;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        
-        .back-to-top.visible {
-            opacity: 1;
-        }
-
-        @media screen and (max-width: 768px) {
-            .section-title::after {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            
-            .section-title {
-                text-align: center;
-            }
-            
-            .experience-item {
-                padding-left: 25px;
-            }
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
         }
     </style>
 </head>
@@ -261,29 +150,20 @@
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="#">Akshay Kumar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" 
+                    aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#experience">Experience</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skills">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#summary">Summary</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -292,53 +172,41 @@
     <!-- Hero Section -->
     <section id="home" class="hero-section">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-12 text-center" data-aos="fade-up">
-                    <img src="https://www.pupsn.com/_next/image?url=%2Fmedia%2Fpeople%2FAkshay%2FAkshay1.jpg&w=256&q=75" alt="Akshay Kumar" class="profile-img mb-4">
+            <div class="row">
+                <div class="col-lg-12" data-aos="fade-up">
                     <h1 class="display-4 fw-bold mb-3">Akshay Kumar</h1>
-                    <h3 class="mb-4">Applied MLE and Computer Vision Engineer</h3>
-                    <p class="lead mb-4">Specialized in Computer Vision, NLP, and Deep Learning</p>
-                    <div class="social-icons mb-4">
-                        <a href="https://www.linkedin.com/in/akshaysatyam2/" target="_blank" class="social-linkedin">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://github.com/akshaysatyam2" target="_blank" class="social-github">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://www.kaggle.com/akshaysatyam2" target="_blank" class="social-kaggle">
-                            <i class="fab fa-kaggle"></i>
-                        </a>
-                        <a href="https://www.instagram.com/akshaysatyam2/" target="_blank" class="social-instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://twitter.com/akshaysatyam2" target="_blank" class="social-twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </div>
-                    <a href="#contact" class="btn btn-dark btn-lg px-4 me-md-2">Contact Me</a>
+                    <p class="lead mb-4">
+                        <a href="mailto:akshaysatyam2003@gmail.com">akshaysatyam2003@gmail.com</a> |
+                        <a href="https://www.linkedin.com/in/akshaysatyam2/" target="_blank">LinkedIn</a> |
+                        <a href="https://www.pupsn.com" target="_blank">Portfolio</a>
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-5">
+    <!-- Professional Summary -->
+    <section id="summary" class="py-5">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2 class="section-title">About Me</h2>
-                    <p class="lead">
-                        I am a <strong>Applied MLE and Computer Vision Engineer</strong> with expertise in deploying real-time computer vision models on edge devices, developing ChatBots, and building Retrieval-Augmented Generation (RAG) systems for document-based question answering.
-                    </p>
-                    <p>
-                        With 1+ years of experience in creating production-ready AI solutions, I specialize in developing high-accuracy computer vision systems (95%+) and working with advanced Large Language Models (LLMs). My primary focus is on enhancing my knowledge and skills in <strong>Computer Vision</strong>, <strong>Natural Language Processing (NLP)</strong>, and <strong>Deep Learning</strong>.
-                    </p>
-                    <div class="mt-4">
-                        <h4>Founder of <a href="https://www.pupsn.com" target="_blank" class="text-decoration-none">PupsN.com</a></h4>
-                        <p>
-                            I am the founder of <strong>PupsN.com</strong>, a platform dedicated to providing high-quality resources and tools for pet lovers and professionals. Our mission is to make pet care more accessible and enjoyable through innovative solutions.
-                        </p>
-                    </div>
+            <h2 class="section-title">Professional Summary</h2>
+            <p class="lead">
+                Applied ML Engineer | Machine Learning Engineer with 1+ years of experience in production-ready AI solutions. 
+                Specialized in high-accuracy computer vision (95 %+) and NLP with advanced LLMs. Skilled in ML pipelines, 
+                real-time inference and scalable MLOps (YOLO, RAG, Kafka, FastAPI).
+            </p>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="card">
+                <div class="card-body">
+                    <h4>Bachelor in Computer Application and Cyber Security (BCACS)</h4>
+                    <h6>Jharkhand Raksha Shakti University, Ranchi, JH</h6>
+                    <p class="text-muted">2020 – 2023</p>
+                    <p><strong>CGPA:</strong> 8.41</p>
                 </div>
             </div>
         </div>
@@ -347,60 +215,96 @@
     <!-- Experience Section -->
     <section id="experience" class="py-5">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12" data-aos="fade-up">
-                    <h2 class="section-title">Work Experience</h2>
-                    
-                    <div class="experience-item">
-                        <h4>Computer Vision Engineer</h4>
-                        <h6>Loksun.ai, Bengaluru, KA</h6>
-                        <p class="text-muted">Jan 2025 – Present</p>
-                        <ul>
-                            <li>Developed a real-time PPE Detection System with frame dropping and ROI functionality, fine-tuning YOLOv11n on a 50% custom dataset to achieve mAP50: 0.8718 and mAP50-95: 0.5999, improving detection accuracy from 70% to ~95%.</li>
-                            <li>Developed a multi-source facial recognition system with over 95% detection accuracy. Optimized model usage for security monitoring and access control by enabling cross-profile face matching, storing detection results in an SQL database, and tracking individual sightings effectively.</li>
-                            <li>Enhanced voice-to-person recognition through optimized signal processing and developed an AI agent using Bedrock Claude for automated blog creation with SEO and image generation.</li>
-                            <li>Created a Retrieval-Augmented Generation (RAG) system using the Gemini model and developed AI agents for email generation and document processing.</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="experience-item">
-                        <h4>AI/ML Intern</h4>
-                        <h6>Techdome Solutions, Indore, MP</h6>
-                        <p class="text-muted">Oct 2023 – Feb 2024</p>
-                        <ul>
-                            <li>Developed and deployed Catalyst, an AzureEdge application for video feed and sensor data processing, using YOLO for detection (mAP: 0.72) and SORT for tracking, integrated with Kafka and HiveMQ (MQTT).</li>
-                            <li>Built ChatWithData, a chatbot for natural language queries providing data insights as graphs, text summaries, and visualizations.</li>
-                            <li>Developed a Resume Processer using RAG to extract and store relevant data from resumes.</li>
-                            <li>Worked on multiple projects with Generative AI and Transformer NLP models.</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="experience-item">
-                        <h4>Assoc. Solution Developer</h4>
-                        <h6>Quadwave Consulting, Pune, MH</h6>
-                        <p class="text-muted">Aug 2022 – Jan 2023</p>
-                        <ul>
-                            <li>Worked on Econsys V4, a business management system for specialist contracting firms.</li>
-                            <li>Developed backend services using Java (Liferay, JSP, Servlets, and JBPM) and assisted in unit testing & module implementation.</li>
-                        </ul>
-                    </div>
-                </div>
+            <h2 class="section-title">Work Experience</h2>
+
+            <div class="experience-item">
+                <h4>Machine Learning Engineer</h4>
+                <h6>Loksun.ai, Bengaluru, KA</h6>
+                <p class="text-muted">Jan 2025 – Present</p>
+                <ul>
+                    <li><strong>PPE Detection System:</strong> Real-time video pipeline with frame-dropping & ROI. Fine-tuned YOLOv11n on 50% custom data → mAP50: 0.8718, mAP50-95: 0.5999; deployed on client sites, boosting detection from 70% to ~95%.</li>
+                    <li><strong>Facial Recognition System (FRS):</strong> Multi-source face recognition + tracking (>90% true positives). Cross-profile matching, web UI, SQL storage for sighting history.</li>
+                    <li><strong>Octopi:</strong> Enhanced voice-to-person recognition; built AI agent with AWS Bedrock Claude for SEO-optimized blog creation and automated image generation; developed AI Psychiatrist & Chatbot for mental-health screening; trained facial-action classifiers.</li>
+                    <li><strong>RAG Application:</strong> Retrieval-Augmented Generation system with Gemini for document Q&A and data extraction.</li>
+                    <li><strong>AI Automation:</strong> AI agents for automated email & LinkedIn post generation and document processing, reducing manual effort.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h4>AI/ML Intern</h4>
+                <h6>Techdome Solutions, Indore, MP</h6>
+                <p class="text-muted">Oct 2023 – Feb 2024</p>
+                <ul>
+                    <li><strong>Catalyst:</strong> AzureEdge app for video & sensor data processing. YOLO detection (mAP: 0.72) + SORT tracking, integrated Kafka & HiveMQ (MQTT), FastAPI backend, SQL storage & media archiving.</li>
+                    <li><strong>ChatWithData:</strong> Chatbot for natural-language data queries, returning graphs, summaries & visualizations.</li>
+                    <li><strong>Resume Processor:</strong> Retrieval-Augmented Generation to extract & store resume data for efficient retrieval.</li>
+                    <li>Worked on multiple projects with Generative AI and Transformer NLP models.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h4>Assoc. Solution Developer</h4>
+                <h6>Quadwave Consulting, Pune, MH</h6>
+                <p class="text-muted">Aug 2022 – Jan 2023</p>
+                <ul>
+                    <li>Developed Econsys V4 for specialist contracting firms: backend services in Java (Liferay, JSP, Servlets, JBPM), unit testing & module implementation.</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- Education Section -->
-    <section id="education" class="py-5">
+    <!-- Projects Section -->
+    <section id="projects" class="py-5">
         <div class="container">
+            <h2 class="section-title">Projects</h2>
             <div class="row">
-                <div class="col-lg-12" data-aos="fade-up">
-                    <h2 class="section-title">Education</h2>
-                    <div class="card">
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100">
                         <div class="card-body">
-                            <h4>Bachelor in Computer Application and Cyber Security (BCACS)</h4>
-                            <h6>Jharkhand Raksha Shakti University, Ranchi, JH</h6>
-                            <p class="text-muted">2020 - 2023</p>
-                            <p><strong>CGPA:</strong> 8.41</p>
+                            <h5 class="card-title">Traffic Monitoring</h5>
+                            <p class="card-text">
+                                System to monitor road traffic via video feeds: YOLOv8 for vehicle detection & SORT for tracking. 
+                                Vehicle registrations extracted with YOLOv8 & EasyOCR.
+                            </p>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <a href="https://github.com/akshaysatyam2/Traffic-Monitoring" target="_blank" class="btn btn-sm btn-outline-primary">
+                                <i class="fab fa-github me-1"></i> View on GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">RAG Model Framework</h5>
+                            <p class="card-text">
+                                Open-source Retrieval-Augmented Generation model for document Q&A (.txt, .pdf, .docx, .html, .json, .xlsx). 
+                                CLI & Flask web app, using Transformers for retrieval, re-ranking & summarization.
+                            </p>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <a href="https://github.com/akshaysatyam2/rag-model-framework" target="_blank" class="btn btn-sm btn-outline-primary">
+                                <i class="fab fa-github me-1"></i> View on GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Test Cheating Detection</h5>
+                            <p class="card-text">
+                                Real-time exam cheating detection with computer vision: head-pose tracking, device detection, identity verification & alerting. 
+                                Integrated YOLO & MediaPipe for scalable monitoring.
+                            </p>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <a href="https://github.com/akshaysatyam2/Test-Cheating-Detection" target="_blank" class="btn btn-sm btn-outline-primary">
+                                <i class="fab fa-github me-1"></i> View on GitHub
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -411,199 +315,64 @@
     <!-- Skills Section -->
     <section id="skills" class="py-5">
         <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
             <div class="row">
-                <div class="col-lg-12" data-aos="fade-up">
-                    <h2 class="section-title">Technical Skills</h2>
-                    
-                    <div class="row mb-4">
-                        <div class="col-md-6">
-                            <div class="card mb-4">
-                                <div class="card-header">Machine Learning & AI</div>
-                                <div class="card-body">
-                                    <span class="skill-badge">Computer Vision</span>
-                                    <span class="skill-badge">NLP</span>
-                                    <span class="skill-badge">Deep Learning</span>
-                                    <span class="skill-badge">Machine Learning</span>
-                                    <span class="skill-badge">LLMs</span>
-                                    <span class="skill-badge">RAG</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card mb-4">
-                                <div class="card-header">Frameworks & Libraries</div>
-                                <div class="card-body">
-                                    <span class="skill-badge">TensorFlow</span>
-                                    <span class="skill-badge">OpenCV</span>
-                                    <span class="skill-badge">YOLO</span>
-                                    <span class="skill-badge">scikit-learn</span>
-                                    <span class="skill-badge">Pandas</span>
-                                    <span class="skill-badge">NumPy</span>
-                                    <span class="skill-badge">Hugging Face</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="row mb-4">
-                        <div class="col-md-6">
-                            <div class="card mb-4">
-                                <div class="card-header">Cloud & Infrastructure</div>
-                                <div class="card-body">
-                                    <span class="skill-badge">AWS (Bedrock, Lambda)</span>
-                                    <span class="skill-badge">Azure (AzureEdge)</span>
-                                    <span class="skill-badge">Docker</span>
-                                    <span class="skill-badge">MLOps</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card mb-4">
-                                <div class="card-header">Data Engineering & Development</div>
-                                <div class="card-body">
-                                    <span class="skill-badge">SQL</span>
-                                    <span class="skill-badge">NoSQL</span>
-                                    <span class="skill-badge">Kafka</span>
-                                    <span class="skill-badge">MQTT</span>
-                                    <span class="skill-badge">Git</span>
-                                    <span class="skill-badge">FastAPI</span>
-                                    <span class="skill-badge">Flask</span>
-                                    <span class="skill-badge">CI/CD</span>
-                                    <span class="skill-badge">Linux</span>
-                                </div>
-                            </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-header">Machine Learning & AI</div>
+                        <div class="card-body">
+                            <span class="skill-badge">Computer Vision</span>
+                            <span class="skill-badge">NLP</span>
+                            <span class="skill-badge">GenAI</span>
+                            <span class="skill-badge">Deep Learning</span>
+                            <span class="skill-badge">Machine Learning</span>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12" data-aos="fade-up">
-                    <h2 class="section-title">Projects</h2>
-                    
-                    <div class="row">
-                        <!-- Project 1 -->
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="card project-card h-100">
-                                <div class="card-body">
-                                    <h5 class="card-title">Traffic Monitoring</h5>
-                                    <p class="card-text">
-                                        A system to monitor road traffic using video feeds, leveraging YOLOv8 for object detection and SORT for tracking. The model accurately detects and tracks vehicles in real-time, with EasyOCR for text extraction.
-                                    </p>
-                                    <div class="mt-3">
-                                        <span class="badge bg-primary me-1">YOLO</span>
-                                        <span class="badge bg-primary me-1">FaceNet</span>
-                                        <span class="badge bg-primary me-1">EasyOCR</span>
-                                        <span class="badge bg-primary me-1">OpenCV</span>
-                                        <span class="badge bg-primary me-1">SORT</span>
-                                    </div>
-                                </div>
-                                <div class="card-footer bg-transparent border-top-0">
-                                    <a href="https://github.com/akshaysatyam2/Traffic-Monitoring" target="_blank" class="btn btn-sm btn-outline-primary">
-                                        <i class="fab fa-github me-1"></i> View on GitHub
-                                    </a>
-                                </div>
-                            </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-header">Frameworks & Libraries</div>
+                        <div class="card-body">
+                            <span class="skill-badge">TensorFlow</span>
+                            <span class="skill-badge">PyTorch</span>
+                            <span class="skill-badge">OpenCV</span>
+                            <span class="skill-badge">YOLO</span>
                         </div>
-                        
-                        <!-- Project 2 -->
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="card project-card h-100">
-                                <div class="card-body">
-                                    <h5 class="card-title">RAG Model Framework</h5>
-                                    <p class="card-text">
-                                        Open-source Retrieval-Augmented Generation model for document-based question answering. Supports multiple file formats and leverages pre-trained models for retrieval, re-ranking and summarization.
-                                    </p>
-                                    <div class="mt-3">
-                                        <span class="badge bg-primary me-1">Python</span>
-                                        <span class="badge bg-primary me-1">Transformers</span>
-                                        <span class="badge bg-primary me-1">Flask</span>
-                                        <span class="badge bg-primary me-1">RAG</span>
-                                    </div>
-                                </div>
-                                <div class="card-footer bg-transparent border-top-0">
-                                    <a href="https://github.com/akshaysatyam2/rag-model-framework" target="_blank" class="btn btn-sm btn-outline-primary">
-                                        <i class="fab fa-github me-1"></i> View on GitHub
-                                    </a>
-                                </div>
-                            </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-header">Cloud & Infrastructure</div>
+                        <div class="card-body">
+                            <span class="skill-badge">AWS</span>
+                            <span class="skill-badge">Azure</span>
+                            <span class="skill-badge">GCP</span>
+                            <span class="skill-badge">Docker</span>
+                            <span class="skill-badge">MLOps</span>
                         </div>
-                        
-                        <!-- Project 3 -->
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="card project-card h-100">
-                                <div class="card-body">
-                                    <h5 class="card-title">Test Cheating Detection</h5>
-                                    <p class="card-text">
-                                        Real-time cheating detection system using computer vision. Tracks head orientation, detects unauthorized devices, identifies individuals, and sends alerts for cheating.
-                                    </p>
-                                    <div class="mt-3">
-                                        <span class="badge bg-primary me-1">Python</span>
-                                        <span class="badge bg-primary me-1">YOLO</span>
-                                        <span class="badge bg-primary me-1">OpenCV</span>
-                                        <span class="badge bg-primary me-1">MediaPipe</span>
-                                    </div>
-                                </div>
-                                <div class="card-footer bg-transparent border-top-0">
-                                    <a href="https://github.com/akshaysatyam2/Test-Cheating-Detection" target="_blank" class="btn btn-sm btn-outline-primary">
-                                        <i class="fab fa-github me-1"></i> View on GitHub
-                                    </a>
-                                </div>
-                            </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-header">Data Engineering</div>
+                        <div class="card-body">
+                            <span class="skill-badge">SQL</span>
+                            <span class="skill-badge">NoSQL</span>
+                            <span class="skill-badge">Kafka</span>
+                            <span class="skill-badge">MQTT</span>
                         </div>
-                    
-                    <!-- GitHub Stats -->
-                    <div class="github-stats mt-5" data-aos="fade-up">
-                        <h3 class="mb-4">GitHub Stats</h3>
-                        <div class="row">
-                            <!-- GitHub Stats Card -->
-                            <div class="col-md-6 mb-4">
-                                <div class="card h-100">
-                                    <div class="card-body text-center">
-                                        <img 
-                                            src="https://github-readme-stats.vercel.app/api?username=akshaysatyam2&show_icons=true&theme=dark&hide_border=true&count_private=true" 
-                                            alt="GitHub Stats" 
-                                            class="img-fluid"
-                                        >
-                                        <p class="text-muted mt-2">GitHub Activity Overview</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Top Languages Card -->
-                            <div class="col-md-6 mb-4">
-                                <div class="card h-100">
-                                    <div class="card-body text-center">
-                                        <img 
-                                            src="https://github-readme-stats.vercel.app/api/top-langs/?username=akshaysatyam2&layout=compact&theme=dark&hide_border=true&langs_count=8" 
-                                            alt="Top Languages" 
-                                            class="img-fluid"
-                                        >
-                                        <p class="text-muted mt-2">Most Used Languages</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- GitHub Streak Stats -->
-                        <div class="row mt-4">
-                            <div class="col-md-12">
-                                <div class="card">
-                                    <div class="card-body text-center">
-                                        <img 
-                                            src="https://streak-stats.demolab.com?user=akshaysatyam2&theme=dark&hide_border=true" 
-                                            alt="GitHub Streak Stats" 
-                                            class="img-fluid"
-                                        >
-                                        <p class="text-muted mt-2">GitHub Contribution Streak</p>
-                                    </div>
-                                </div>
-                            </div>
+                    </div>
+                </div>
+                <div class="col-md-12 mb-4">
+                    <div class="card">
+                        <div class="card-header">Development Tools</div>
+                        <div class="card-body">
+                            <span class="skill-badge">Git</span>
+                            <span class="skill-badge">FastAPI</span>
+                            <span class="skill-badge">Flask</span>
+                            <span class="skill-badge">Django</span>
+                            <span class="skill-badge">CI/CD</span>
+                            <span class="skill-badge">Linux</span>
                         </div>
                     </div>
                 </div>
@@ -614,74 +383,40 @@
     <!-- Contact Section -->
     <section id="contact" class="py-5">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center" data-aos="fade-up">
-                    <h2 class="section-title mx-auto">Contact Me</h2>
-                    <p class="lead mb-4">Have a project in mind? Let's discuss how we can work together.</p>
-                    <div class="row justify-content-center">
-                        <div class="col-md-6">
-                            <div class="card mb-4">
-                                <div class="card-body">
-                                    <div class="mb-3">
-                                        <i class="fas fa-envelope text-primary me-2"></i>
-                                        <a href="mailto:akshaysatyam2003@gmail.com" class="text-decoration-none">akshaysatyam2003@gmail.com</a>
-                                    </div>
-                                    <div>
-                                        <i class="fab fa-linkedin text-primary me-2"></i>
-                                        <a href="https://www.linkedin.com/in/akshaysatyam2/" target="_blank" class="text-decoration-none">linkedin.com/in/akshaysatyam2</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <h2 class="section-title">Contact</h2>
+            <div class="card mx-auto" style="max-width: 500px;">
+                <div class="card-body text-center">
+                    <p class="mb-2">
+                        <i class="fas fa-envelope text-primary me-2"></i>
+                        <a href="mailto:akshaysatyam2003@gmail.com">akshaysatyam2003@gmail.com</a>
+                    </p>
+                    <p>
+                        <i class="fab fa-linkedin text-primary me-2"></i>
+                        <a href="https://www.linkedin.com/in/akshaysatyam2/" target="_blank">linkedin.com/in/akshaysatyam2</a>
+                    </p>
+                    <p>
+                        <i class="fas fa-globe text-primary me-2"></i>
+                        <a href="https://www.pupsn.com" target="_blank">www.pupsn.com</a>
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Back to top button -->
-    <a class="back-to-top" id="backToTop">
-        <i class="fas fa-arrow-up"></i>
-    </a>
-
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p class="mb-0">&copy; 2024 Akshay Kumar. All rights reserved.</p>
+            <p class="mb-0">&copy; 2025 Akshay Kumar. All rights reserved.</p>
         </div>
     </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- AOS Animation Library -->
+    <!-- AOS Animation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    
-    <!-- Custom Script -->
     <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 1000,
-            easing: 'ease-in-out',
-            once: true
-        });
-
-        // Back to top button
-        const backToTopButton = document.getElementById('backToTop');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopButton.classList.add('visible');
-            } else {
-                backToTopButton.classList.remove('visible');
-            }
-        });
-
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
+        AOS.init({ duration: 1000, easing: 'ease-in-out', once: true });
+        // Back-to-top logic removed since images/buttons were removed
     </script>
 </body>
 </html>
