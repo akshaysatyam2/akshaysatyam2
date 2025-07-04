@@ -1,422 +1,1202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akshay Kumar - Applied ML Engineer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Akshay Kumar • Applied ML Engineer</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+  <style>
+    :root {
+      --primary-color: #2563eb;
+      --secondary-color: #7c3aed;
+      --accent-color: #ec4899;
+      --dark-color: #1e293b;
+      --light-color: #f8fafc;
+      --gray-100: #f1f5f9;
+      --gray-200: #e2e8f0;
+      --gray-300: #cbd5e1;
+      --gray-400: #94a3b8;
+      --gray-500: #64748b;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-800: #1e293b;
+      --gray-900: #0f172a;
+      --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+      --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      --gradient-dark: linear-gradient(135deg, #434343 0%, #000000 100%);
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 0 15px 0 rgb(59 130 246 / 0.2);
+      --border-radius: 0.75rem;
+      --transition-speed: 0.3s;
+    }
+
+    [data-theme="dark"] {
+      --primary-color: #3b82f6;
+      --secondary-color: #8b5cf6;
+      --accent-color: #f472b6;
+      --dark-color: #f8fafc;
+      --light-color: #0f172a;
+      --gray-100: #1e293b;
+      --gray-200: #334155;
+      --gray-300: #475569;
+      --gray-400: #64748b;
+      --gray-500: #94a3b8;
+      --gray-600: #535455;
+      --gray-700: #e2e8f0;
+      --gray-800: #f1f5f9;
+      --gray-900: #f8fafc;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--gray-800);
+      background-color: var(--light-color);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+      transition: background-color var(--transition-speed), color var(--transition-speed);
+    }
+
+    /* Scrollbar Styling */
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: var(--gray-100); }
+    ::-webkit-scrollbar-thumb { background: var(--primary-color); border-radius: 5px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--secondary-color); }
+
+    /* Navbar */
+    .navbar {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition-speed);
+    }
+
+    [data-theme="dark"] .navbar {
+      background: rgba(15, 23, 42, 0.85);
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-link {
+      color: var(--gray-600) !important;
+      font-weight: 500;
+      position: relative;
+      transition: color var(--transition-speed);
+      padding: 0.5rem 1rem !important;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--primary-color) !important;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--primary-color);
+      transition: all var(--transition-speed);
+      transform: translateX(-50%);
+    }
+
+    .nav-link:hover::after, .nav-link.active::after { width: 80%; }
+
+    /* Theme Toggle */
+    .theme-toggle {
+      background: var(--gray-200);
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all var(--transition-speed);
+      margin-left: 1rem;
+    }
+
+    .theme-toggle:hover {
+      background: var(--gray-300);
+      transform: rotate(180deg);
+    }
+
+    /* Hero Section */
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--gray-100);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, transparent 70%);
+      animation: float 20s ease-in-out infinite alternate;
+    }
+
+    @keyframes float {
+      from { transform: translate(0, 0) rotate(0deg); }
+      to { transform: translate(40px, -30px) rotate(15deg); }
+    }
+
+    .hero-content {
+      text-align: center;
+      z-index: 1;
+      max-width: 800px;
+      padding: 0 2rem;
+    }
+
+    .hero-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin: 0 auto 2rem auto;
+      background: var(--gradient-dark);
+      padding: 5px;
+      box-shadow: var(--shadow-xl);
+      transition: transform var(--transition-speed);
+    }
+
+    .hero-image:hover { transform: scale(1.05); }
+
+    .hero-image-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: var(--gradient-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      color: white;
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 800;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    @media (max-width: 768px) { .hero-title { font-size: 2.5rem; } }
+
+    .hero-subtitle {
+      font-size: 1.5rem;
+      color: var(--gray-600);
+      margin-bottom: 2rem;
+      animation: fadeInUp 1s ease-out 0.2s;
+      animation-fill-mode: both;
+    }
+
+    .hero-description {
+      font-size: 1.1rem;
+      color: var(--gray-500);
+      margin-bottom: 3rem;
+      animation: fadeInUp 1s ease-out 0.4s;
+      animation-fill-mode: both;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeInUp 1s ease-out 0.6s;
+      animation-fill-mode: both;
+    }
+
+    .btn-primary-gradient, .btn-outline-gradient {
+        border: none;
+        padding: 0.75rem 2rem;
+        border-radius: 50px;
+        font-weight: 600;
+        transition: all var(--transition-speed) ease;
+        text-decoration: none;
+    }
     
-    <!-- Favicon -->
-    <link rel="icon" href="https://www.pupsn.com/media/favicon/logo1/favicon.ico" type="image/x-icon">
+    .btn-primary-gradient {
+        background: var(--gradient-primary);
+        color: white;
+        box-shadow: var(--shadow-md);
+    }
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    .btn-primary-gradient:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-lg);
+        color: white;
+    }
+
+    .btn-outline-gradient {
+        background: transparent;
+        color: var(--primary-color);
+        border: 2px solid var(--primary-color);
+    }
+
+    .btn-outline-gradient:hover {
+        background: var(--primary-color);
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-md);
+    }
+
+    /* Social Links */
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 2.5rem;
+      animation: fadeInUp 1s ease-out 0.8s;
+      animation-fill-mode: both;
+    }
+
+    .social-link {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: var(--gray-200);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gray-600);
+      transition: all var(--transition-speed) ease;
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+
+    .social-link:hover {
+      background: var(--gradient-primary);
+      color: white;
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* Section Styling */
+    section {
+      padding: 6rem 0;
+      position: relative;
+    }
+
+    .section-title {
+      font-size: 2.8rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 1rem;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--gray-500);
+      font-size: 1.1rem;
+      margin-bottom: 4rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* General Card Styling */
+    .card {
+      background: var(--light-color);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition-speed) ease;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    [data-theme="dark"] .card {
+      background: var(--gray-800);
+      border-color: var(--gray-700);
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-xl);
+      border-color: var(--primary-color);
+    }
     
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
+    /* About Section Cards */
+     .about-card-icon {
+      font-size: 2.5rem;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+    }
+
+    /* Experience Timeline */
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0.5rem;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: var(--gradient-primary);
+      border-radius: 2px;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-bottom: 3rem;
+    }
     
-    <!-- AOS Animation Library -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    .timeline-item:last-child {
+        padding-bottom: 0;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -0.2rem;
+      top: 5px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--primary-color);
+      border: 4px solid var(--light-color);
+      box-shadow: var(--shadow-md);
+      z-index: 1;
+    }
+
+    .timeline-date {
+      display: inline-block;
+      background: var(--gradient-primary);
+      color: white;
+      padding: 0.25rem 1rem;
+      border-radius: 50px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-content {
+      background: var(--light-color);
+      padding: 1.5rem;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--gray-200);
+      transition: all var(--transition-speed) ease;
+    }
+
+    [data-theme="dark"] .timeline-content {
+      background: var(--gray-800);
+      border-color: var(--gray-700);
+    }
+
+    .timeline-content:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateX(10px);
+      border-color: var(--primary-color);
+    }
+
+    .timeline-content h4 {
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-content h6 {
+      color: var(--gray-600);
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    .timeline-content ul { list-style: none; padding: 0; }
+    .timeline-content li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--gray-600);
+    }
+    .timeline-content li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+
+    /* Skills Section */
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+    .skill-category-card {
+        background: var(--light-color);
+        border: 1px solid var(--gray-200);
+        border-radius: var(--border-radius);
+        padding: 2rem;
+        box-shadow: var(--shadow-sm);
+        transition: all var(--transition-speed) ease;
+    }
+    [data-theme="dark"] .skill-category-card {
+        background: var(--gray-800);
+        border-color: var(--gray-700);
+    }
+    .skill-category-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-xl);
+    }
+    .skill-category-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+    .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+    .skill-badge {
+        background: var(--gray-100);
+        color: var(--gray-700);
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        font-weight: 500;
+        transition: all var(--transition-speed) ease;
+    }
+    .skill-badge:hover {
+        background: var(--gradient-primary);
+        color: white;
+        transform: scale(1.05);
+    }
+    [data-theme="dark"] .skill-badge {
+        background: var(--gray-700);
+        color: var(--gray-200);
+    }
+
+
+    /* Projects Section */
+    .project-card {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        transition: all var(--transition-speed) ease;
+        overflow: hidden;
+    }
+
+    .project-image-wrapper {
+        height: 220px;
+        position: relative;
+        overflow: hidden;
+        background: var(--gradient-dark);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    .project-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        opacity: 0;
+        transition: all var(--transition-speed) ease;
+        transform: translateY(20px);
+    }
     
-    <style>
-        :root {
-            --primary-color: #0d6efd;
-            --secondary-color: #6c757d;
-            --background: linear-gradient(135deg, whitesmoke, lightgray, lightblue);
-            --background-attachment: fixed;
-            --card-background: white;
-            --text-color: #333;
-            --hover-color: rgba(13, 110, 253, 0.1);
-            --dark-gray: #333;
-        }
+    .project-card:hover .project-overlay {
+        opacity: 1;
+        transform: translateY(0);
+    }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: var(--text-color);
-            background: var(--background);
-            background-attachment: var(--background-attachment);
-            position: relative;
-            min-height: 100vh;
-            padding-bottom: 60px;
-        }
+    .project-overlay-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+    
+    .view-project-btn {
+        padding: 0.5rem 1.5rem;
+        border-radius: 50px;
+        background: var(--primary-color);
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all var(--transition-speed) ease;
+    }
 
-        .navbar {
-            background-color: var(--dark-gray) !important;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        .navbar-dark .navbar-nav .nav-link {
-            color: white !important;
-        }
-        .navbar-dark .navbar-nav .nav-link:hover {
-            color: var(--primary-color) !important;
-        }
+    .view-project-btn:hover {
+        background: var(--secondary-color);
+        transform: scale(1.05);
+    }
+    
+    .project-content {
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
 
-        .hero-section {
-            padding: 100px 0;
-            text-align: center;
-        }
-        .hero-section h1 {
-            color: var(--primary-color);
-        }
-        .hero-section p {
-            font-size: 1.1rem;
-        }
+    .project-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
 
-        .section-title {
-            position: relative;
-            margin-bottom: 40px;
-            font-weight: 700;
-            color: var(--primary-color);
-        }
-        .section-title::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -10px;
-            width: 50px;
-            height: 3px;
-            background-color: var(--primary-color);
-        }
+    .project-description {
+      color: var(--gray-600);
+      margin-bottom: 1rem;
+      flex-grow: 1;
+    }
 
-        .card {
-            border: none;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-            background-color: var(--card-background);
-        }
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
 
-        .card-header {
-            background-color: var(--primary-color);
-            color: white;
-            border-radius: 10px 10px 0 0 !important;
-            font-weight: 600;
-        }
+    .tech-badge {
+      background: var(--gray-100);
+      color: var(--gray-700);
+      padding: 0.25rem 0.75rem;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+     [data-theme="dark"] .tech-badge {
+        background: var(--gray-700);
+        color: var(--gray-200);
+    }
 
-        .experience-item {
-            position: relative;
-            padding-left: 30px;
-            margin-bottom: 30px;
-        }
-        .experience-item::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 5px;
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            background-color: var(--primary-color);
-        }
-        .experience-item::after {
-            content: '';
-            position: absolute;
-            left: 7px;
-            top: 20px;
-            width: 2px;
-            height: calc(100% + 10px);
-            background-color: var(--primary-color);
-        }
-        .experience-item:last-child::after {
-            display: none;
-        }
+    .project-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: auto;
+    }
 
-        .skill-badge {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            margin: 5px;
-            display: inline-block;
-            font-size: 0.9rem;
-        }
+    .project-link {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all var(--transition-speed) ease;
+    }
 
-        footer {
-            background-color: var(--dark-gray);
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-        }
-    </style>
+    .project-link:hover {
+      color: var(--secondary-color);
+      text-decoration: underline;
+    }
+
+    /* Contact Section */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--gray-900);
+      color: var(--gray-400);
+      padding: 3rem 0 2rem;
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--gray-400);
+      text-decoration: none;
+      transition: color var(--transition-speed);
+    }
+
+    .footer-links a:hover { color: var(--primary-color); }
+
+    /* Download Resume Button */
+    .download-resume {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--gradient-primary);
+      color: white;
+      padding: 1rem 1.5rem;
+      border-radius: 50px;
+      box-shadow: var(--shadow-lg);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all var(--transition-speed) ease;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .download-resume:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: var(--shadow-xl);
+      color: white;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      section { padding: 4rem 0; }
+      .hero-title { font-size: 2rem; }
+      .hero-subtitle { font-size: 1.2rem; }
+      .section-title { font-size: 2rem; }
+      .timeline { padding-left: 1rem; }
+      .timeline-item::before { left: -0.4rem; }
+      .download-resume {
+        bottom: 1rem;
+        right: 1rem;
+        padding: 0.75rem 1rem;
+        font-size: 0.875rem;
+      }
+    }
+
+    /* Loading Animation */
+    .loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--light-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+
+    .loader.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .loader-inner {
+      width: 50px;
+      height: 50px;
+      border: 3px solid var(--gray-200);
+      border-top-color: var(--primary-color);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
 </head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">Akshay Kumar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
-                    data-bs-target="#navbarNav" aria-controls="navbarNav" 
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#summary">Summary</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-            </div>
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="80">
+
+  <div class="loader" id="loader">
+    <div class="loader-inner"></div>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#home">AK</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarNav" aria-controls="navbarNav"
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+        <button class="theme-toggle" id="themeToggle">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <section id="home" class="hero-section">
+    <div class="hero-content">
+      <div class="hero-image" data-aos="zoom-in">
+        <div class="hero-image-inner">
+          <i class="fas fa-user-astronaut"></i>
         </div>
-    </nav>
+      </div>
+      <h1 class="hero-title">Akshay Kumar</h1>
+      <p class="hero-subtitle">Applied ML Engineer</p>
+      <p class="hero-description">
+        Building production-ready AI solutions with expertise in Computer Vision, NLP, and scalable MLOps.
+      </p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary-gradient">Get In Touch</a>
+        <a href="#projects" class="btn btn-outline-gradient">View Projects</a>
+      </div>
+      <div class="social-links">
+        <a href="mailto:akshaysatyam2003@gmail.com" class="social-link" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/akshaysatyam2/" target="_blank" class="social-link" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/akshaysatyam2" target="_blank" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.pupsn.com" target="_blank" class="social-link" title="PupsN"><i class="fas fa-globe"></i></a>
+      </div>
+    </div>
+  </section>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12" data-aos="fade-up">
-                    <h1 class="display-4 fw-bold mb-3">Akshay Kumar</h1>
-                    <p class="lead mb-4">
-                        <a href="mailto:akshaysatyam2003@gmail.com">akshaysatyam2003@gmail.com</a> |
-                        <a href="https://www.linkedin.com/in/akshaysatyam2/" target="_blank">LinkedIn</a> |
-                        <a href="https://www.pupsn.com" target="_blank">Portfolio</a>
-                    </p>
+  <section id="about" class="py-5">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">About Me</h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+        Passionate about transforming ideas into intelligent solutions.
+      </p>
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <div class="card p-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-body text-center">
+              <p class="lead mb-4">
+                Applied ML Engineer with <strong>1+ years</strong> of experience building production-ready AI solutions. 
+                Specialized in <strong>high-accuracy computer vision (95%+)</strong>, NLP with LLMs, and 
+                <strong>scalable MLOps pipelines</strong> (YOLO, RAG, Kafka, FastAPI).
+              </p>
+              <div class="row text-center mt-5">
+                <div class="col-md-4 mb-3" data-aos="fade-up" data-aos-delay="300">
+                  <div class="about-card-icon"><i class="fas fa-brain"></i></div>
+                  <h5>Machine Learning</h5>
+                  <p class="text-muted">Deep expertise in CV & NLP</p>
                 </div>
+                <div class="col-md-4 mb-3" data-aos="fade-up" data-aos-delay="400">
+                  <div class="about-card-icon"><i class="fas fa-rocket"></i></div>
+                  <h5>Production Ready</h5>
+                  <p class="text-muted">Scalable MLOps pipelines</p>
+                </div>
+                <div class="col-md-4 mb-3" data-aos="fade-up" data-aos-delay="500">
+                  <div class="about-card-icon"><i class="fas fa-chart-line"></i></div>
+                  <h5>High Performance</h5>
+                  <p class="text-muted">95%+ accuracy models</p>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Professional Summary -->
-    <section id="summary" class="py-5">
-        <div class="container">
-            <h2 class="section-title">Professional Summary</h2>
-            <p class="lead">
-                Applied ML Engineer | Machine Learning Engineer with 1+ years of experience in production-ready AI solutions. 
-                Specialized in high-accuracy computer vision (95 %+) and NLP with advanced LLMs. Skilled in ML pipelines, 
-                real-time inference and scalable MLOps (YOLO, RAG, Kafka, FastAPI).
-            </p>
+  <section id="experience" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Work Experience</h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+        My professional journey in AI/ML engineering.
+      </p>
+      
+      <div class="timeline">
+        <div class="timeline-item" data-aos="fade-right">
+          <span class="timeline-date">Jan 2025 – Present</span>
+          <div class="timeline-content">
+            <h4>Machine Learning Engineer</h4>
+            <h6><i class="fas fa-building me-2"></i>Loksun.ai, Bengaluru, KA</h6>
+            <ul>
+              <li><strong>PPE Detection System:</strong> Real-time pipeline with frame-dropping & ROI; YOLOv11n → mAP50 0.87.</li>
+              <li><strong>Facial Recognition:</strong> Multi-source tracking (>90% TPR), cross-profile matching & SQL UI.</li>
+              <li><strong>Octopi AI Agent:</strong> Bedrock Claude blogs, mental-health chatbot & voice-person recognition.</li>
+              <li><strong>RAG System:</strong> Gemini-powered document Q&A & data extraction.</li>
+              <li><strong>AI Automation:</strong> Email & LinkedIn generation agents.</li>
+            </ul>
+          </div>
         </div>
-    </section>
 
-    <!-- Education Section -->
-    <section id="education" class="py-5">
-        <div class="container">
-            <h2 class="section-title">Education</h2>
-            <div class="card">
-                <div class="card-body">
-                    <h4>Bachelor in Computer Application and Cyber Security (BCACS)</h4>
-                    <h6>Jharkhand Raksha Shakti University, Ranchi, JH</h6>
-                    <p class="text-muted">2020 – 2023</p>
-                    <p><strong>CGPA:</strong> 8.41</p>
-                </div>
+        <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
+          <span class="timeline-date">Oct 2023 – Feb 2024</span>
+          <div class="timeline-content">
+            <h4>AI/ML Intern</h4>
+            <h6><i class="fas fa-building me-2"></i>Techdome Solutions, Indore, MP</h6>
+            <ul>
+              <li><strong>Catalyst:</strong> AzureEdge video & sensor processing; YOLO mAP 0.72, Kafka/MQTT, FastAPI.</li>
+              <li><strong>ChatWithData:</strong> NL chatbot delivering graphs & summaries.</li>
+              <li><strong>Resume Processor:</strong> RAG-based data extraction.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-right" data-aos-delay="200">
+          <span class="timeline-date">Aug 2022 – Jan 2023</span>
+          <div class="timeline-content">
+            <h4>Assoc. Solution Developer</h4>
+            <h6><i class="fas fa-building me-2"></i>Quadwave Consulting, Pune, MH</h6>
+            <ul>
+              <li>Java backend (Liferay, JSP, Servlets, JBPM), unit testing & module rollout.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="py-5">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Featured Projects</h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+        A selection of innovative solutions I've engineered.
+      </p>
+      
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in-up">
+          <div class="card project-card">
+            <div class="project-image-wrapper">
+              <i class="fas fa-traffic-light"></i>
+               <div class="project-overlay">
+                   <h5 class="project-overlay-title">Traffic Monitoring System</h5>
+                   <a href="https://github.com/akshaysatyam2/Traffic-Monitoring" target="_blank" class="view-project-btn">View Project</a>
+               </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="py-5">
-        <div class="container">
-            <h2 class="section-title">Work Experience</h2>
-
-            <div class="experience-item">
-                <h4>Machine Learning Engineer</h4>
-                <h6>Loksun.ai, Bengaluru, KA</h6>
-                <p class="text-muted">Jan 2025 – Present</p>
-                <ul>
-                    <li><strong>PPE Detection System:</strong> Real-time video pipeline with frame-dropping & ROI. Fine-tuned YOLOv11n on 50% custom data → mAP50: 0.8718, mAP50-95: 0.5999; deployed on client sites, boosting detection from 70% to ~95%.</li>
-                    <li><strong>Facial Recognition System (FRS):</strong> Multi-source face recognition + tracking (>90% true positives). Cross-profile matching, web UI, SQL storage for sighting history.</li>
-                    <li><strong>Octopi:</strong> Enhanced voice-to-person recognition; built AI agent with AWS Bedrock Claude for SEO-optimized blog creation and automated image generation; developed AI Psychiatrist & Chatbot for mental-health screening; trained facial-action classifiers.</li>
-                    <li><strong>RAG Application:</strong> Retrieval-Augmented Generation system with Gemini for document Q&A and data extraction.</li>
-                    <li><strong>AI Automation:</strong> AI agents for automated email & LinkedIn post generation and document processing, reducing manual effort.</li>
-                </ul>
+            <div class="project-content">
+              <h5 class="project-title">Traffic Monitoring System</h5>
+              <p class="project-description">
+                Real-time vehicle tracking with YOLOv8 & SORT algorithm combined with EasyOCR for license-plate extraction.
+              </p>
+              <div class="project-tech">
+                <span class="tech-badge">YOLOv8</span><span class="tech-badge">SORT</span><span class="tech-badge">EasyOCR</span><span class="tech-badge">OpenCV</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/akshaysatyam2/Traffic-Monitoring" target="_blank" class="project-link"><i class="fab fa-github me-1"></i>GitHub</a>
+                <a href="#" class="project-link"><i class="fas fa-external-link-alt me-1"></i>Demo</a>
+              </div>
             </div>
-
-            <div class="experience-item">
-                <h4>AI/ML Intern</h4>
-                <h6>Techdome Solutions, Indore, MP</h6>
-                <p class="text-muted">Oct 2023 – Feb 2024</p>
-                <ul>
-                    <li><strong>Catalyst:</strong> AzureEdge app for video & sensor data processing. YOLO detection (mAP: 0.72) + SORT tracking, integrated Kafka & HiveMQ (MQTT), FastAPI backend, SQL storage & media archiving.</li>
-                    <li><strong>ChatWithData:</strong> Chatbot for natural-language data queries, returning graphs, summaries & visualizations.</li>
-                    <li><strong>Resume Processor:</strong> Retrieval-Augmented Generation to extract & store resume data for efficient retrieval.</li>
-                    <li>Worked on multiple projects with Generative AI and Transformer NLP models.</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <h4>Assoc. Solution Developer</h4>
-                <h6>Quadwave Consulting, Pune, MH</h6>
-                <p class="text-muted">Aug 2022 – Jan 2023</p>
-                <ul>
-                    <li>Developed Econsys V4 for specialist contracting firms: backend services in Java (Liferay, JSP, Servlets, JBPM), unit testing & module implementation.</li>
-                </ul>
-            </div>
+          </div>
         </div>
-    </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-5">
-        <div class="container">
-            <h2 class="section-title">Projects</h2>
-            <div class="row">
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Traffic Monitoring</h5>
-                            <p class="card-text">
-                                System to monitor road traffic via video feeds: YOLOv8 for vehicle detection & SORT for tracking. 
-                                Vehicle registrations extracted with YOLOv8 & EasyOCR.
-                            </p>
-                        </div>
-                        <div class="card-footer bg-transparent border-top-0">
-                            <a href="https://github.com/akshaysatyam2/Traffic-Monitoring" target="_blank" class="btn btn-sm btn-outline-primary">
-                                <i class="fab fa-github me-1"></i> View on GitHub
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">RAG Model Framework</h5>
-                            <p class="card-text">
-                                Open-source Retrieval-Augmented Generation model for document Q&A (.txt, .pdf, .docx, .html, .json, .xlsx). 
-                                CLI & Flask web app, using Transformers for retrieval, re-ranking & summarization.
-                            </p>
-                        </div>
-                        <div class="card-footer bg-transparent border-top-0">
-                            <a href="https://github.com/akshaysatyam2/rag-model-framework" target="_blank" class="btn btn-sm btn-outline-primary">
-                                <i class="fab fa-github me-1"></i> View on GitHub
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Test Cheating Detection</h5>
-                            <p class="card-text">
-                                Real-time exam cheating detection with computer vision: head-pose tracking, device detection, identity verification & alerting. 
-                                Integrated YOLO & MediaPipe for scalable monitoring.
-                            </p>
-                        </div>
-                        <div class="card-footer bg-transparent border-top-0">
-                            <a href="https://github.com/akshaysatyam2/Test-Cheating-Detection" target="_blank" class="btn btn-sm btn-outline-primary">
-                                <i class="fab fa-github me-1"></i> View on GitHub
-                            </a>
-                        </div>
-                    </div>
-                </div>
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in-up" data-aos-delay="150">
+          <div class="card project-card">
+            <div class="project-image-wrapper">
+              <i class="fas fa-robot"></i>
+               <div class="project-overlay">
+                   <h5 class="project-overlay-title">RAG Model Framework</h5>
+                   <a href="https://github.com/akshaysatyam2/rag-model-framework" target="_blank" class="view-project-btn">View Project</a>
+               </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-5">
-        <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <div class="card">
-                        <div class="card-header">Machine Learning & AI</div>
-                        <div class="card-body">
-                            <span class="skill-badge">Computer Vision</span>
-                            <span class="skill-badge">NLP</span>
-                            <span class="skill-badge">GenAI</span>
-                            <span class="skill-badge">Deep Learning</span>
-                            <span class="skill-badge">Machine Learning</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <div class="card">
-                        <div class="card-header">Frameworks & Libraries</div>
-                        <div class="card-body">
-                            <span class="skill-badge">TensorFlow</span>
-                            <span class="skill-badge">PyTorch</span>
-                            <span class="skill-badge">OpenCV</span>
-                            <span class="skill-badge">YOLO</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <div class="card">
-                        <div class="card-header">Cloud & Infrastructure</div>
-                        <div class="card-body">
-                            <span class="skill-badge">AWS</span>
-                            <span class="skill-badge">Azure</span>
-                            <span class="skill-badge">GCP</span>
-                            <span class="skill-badge">Docker</span>
-                            <span class="skill-badge">MLOps</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <div class="card">
-                        <div class="card-header">Data Engineering</div>
-                        <div class="card-body">
-                            <span class="skill-badge">SQL</span>
-                            <span class="skill-badge">NoSQL</span>
-                            <span class="skill-badge">Kafka</span>
-                            <span class="skill-badge">MQTT</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12 mb-4">
-                    <div class="card">
-                        <div class="card-header">Development Tools</div>
-                        <div class="card-body">
-                            <span class="skill-badge">Git</span>
-                            <span class="skill-badge">FastAPI</span>
-                            <span class="skill-badge">Flask</span>
-                            <span class="skill-badge">Django</span>
-                            <span class="skill-badge">CI/CD</span>
-                            <span class="skill-badge">Linux</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="project-content">
+              <h5 class="project-title">RAG Model Framework</h5>
+              <p class="project-description">
+                CLI & Flask application for document Q&A supporting multiple formats (.pdf, .docx, .xlsx) using Transformers.
+              </p>
+              <div class="project-tech">
+                <span class="tech-badge">Transformers</span><span class="tech-badge">Flask</span><span class="tech-badge">RAG</span><span class="tech-badge">Python</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/akshaysatyam2/rag-model-framework" target="_blank" class="project-link"><i class="fab fa-github me-1"></i>GitHub</a>
+                <a href="#" class="project-link"><i class="fas fa-external-link-alt me-1"></i>Demo</a>
+              </div>
             </div>
+          </div>
         </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-5">
-        <div class="container">
-            <h2 class="section-title">Contact</h2>
-            <div class="card mx-auto" style="max-width: 500px;">
-                <div class="card-body text-center">
-                    <p class="mb-2">
-                        <i class="fas fa-envelope text-primary me-2"></i>
-                        <a href="mailto:akshaysatyam2003@gmail.com">akshaysatyam2003@gmail.com</a>
-                    </p>
-                    <p>
-                        <i class="fab fa-linkedin text-primary me-2"></i>
-                        <a href="https://www.linkedin.com/in/akshaysatyam2/" target="_blank">linkedin.com/in/akshaysatyam2</a>
-                    </p>
-                    <p>
-                        <i class="fas fa-globe text-primary me-2"></i>
-                        <a href="https://www.pupsn.com" target="_blank">www.pupsn.com</a>
-                    </p>
-                </div>
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in-up" data-aos-delay="300">
+          <div class="card project-card">
+            <div class="project-image-wrapper">
+              <i class="fas fa-user-shield"></i>
+               <div class="project-overlay">
+                   <h5 class="project-overlay-title">Test Cheating Detection</h5>
+                   <a href="https://github.com/akshaysatyam2/Test-Cheating-Detection" target="_blank" class="view-project-btn">View Project</a>
+               </div>
             </div>
+            <div class="project-content">
+              <h5 class="project-title">Test Cheating Detection</h5>
+              <p class="project-description">
+                Exam integrity monitoring system using YOLO & MediaPipe for head-pose estimation and device detection alerts.
+              </p>
+              <div class="project-tech">
+                <span class="tech-badge">YOLO</span><span class="tech-badge">MediaPipe</span><span class="tech-badge">Computer Vision</span><span class="tech-badge">Python</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/akshaysatyam2/Test-Cheating-Detection" target="_blank" class="project-link"><i class="fab fa-github me-1"></i>GitHub</a>
+                <a href="#" class="project-link"><i class="fas fa-external-link-alt me-1"></i>Demo</a>
+              </div>
+            </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p class="mb-0">&copy; 2025 Akshay Kumar. All rights reserved.</p>
+  <section id="skills" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Technical Skills</h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+        My toolbox for building intelligent applications.
+      </p>
+      
+      <div class="skills-grid">
+          <div class="skill-category-card" data-aos="fade-up" data-aos-delay="200">
+              <h4 class="skill-category-title"><i class="fas fa-brain"></i> Core Technologies</h4>
+              <div class="skills-list">
+                  <span class="skill-badge">Computer Vision</span>
+                  <span class="skill-badge">NLP</span>
+                  <span class="skill-badge">Deep Learning</span>
+                  <span class="skill-badge">Python</span>
+                  <span class="skill-badge">MLOps</span>
+              </div>
+          </div>
+          <div class="skill-category-card" data-aos="fade-up" data-aos-delay="300">
+              <h4 class="skill-category-title"><i class="fas fa-cogs"></i> Frameworks & Libraries</h4>
+              <div class="skills-list">
+                  <span class="skill-badge">TensorFlow</span>
+                  <span class="skill-badge">PyTorch</span>
+                  <span class="skill-badge">OpenCV</span>
+                  <span class="skill-badge">FastAPI</span>
+                  <span class="skill-badge">Hugging Face</span>
+                  <span class="skill-badge">Scikit-learn</span>
+              </div>
+          </div>
+          <div class="skill-category-card" data-aos="fade-up" data-aos-delay="400">
+              <h4 class="skill-category-title"><i class="fas fa-cloud"></i> Tools & Platforms</h4>
+              <div class="skills-list">
+                  <span class="skill-badge">AWS</span>
+                  <span class="skill-badge">Docker</span>
+                  <span class="skill-badge">Kafka</span>
+                  <span class="skill-badge">Git & GitHub</span>
+                  <span class="skill-badge">Jira</span>
+                  <span class="skill-badge">SQL</span>
+              </div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="py-5">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Education</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card p-4" data-aos="zoom-in-up">
+            <div class="card-body text-center">
+              <div class="about-card-icon"><i class="fas fa-graduation-cap"></i></div>
+              <h4 class="mb-3">Bachelor of Computer Applications & Cyber Security</h4>
+              <h6 class="text-muted mb-3">Jharkhand Raksha Shakti University, Ranchi, JH</h6>
+              <p class="mb-1"><strong>CGPA:</strong> 8.41</p>
+              <p class="text-muted">2020 – 2023</p>
+            </div>
+          </div>
         </div>
-    </footer>
+      </div>
+    </div>
+  </section>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-    <!-- AOS Animation -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-        AOS.init({ duration: 1000, easing: 'ease-in-out', once: true });
-        // Back-to-top logic removed since images/buttons were removed
-    </script>
+  <section id="contact" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+        Let's discuss how I can help with your AI/ML projects.
+      </p>
+      <div class="row justify-content-center">
+          <div class="col-lg-8">
+              <div class="card p-5 text-center" data-aos="fade-up" data-aos-delay="200">
+                  <p class="lead">I'm currently available for freelance work and open to discussing new opportunities. Feel free to reach out!</p>
+                  <div class="mt-4">
+                      <a href="mailto:akshaysatyam2003@gmail.com" class="btn btn-primary-gradient btn-lg">
+                        <i class="fas fa-envelope me-2"></i>Email Me
+                      </a>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="social-links mb-4">
+        <a href="mailto:akshaysatyam2003@gmail.com" class="social-link" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/akshaysatyam2/" target="_blank" class="social-link" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/akshaysatyam2" target="_blank" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.pupsn.com" target="_blank" class="social-link" title="PupsN"><i class="fas fa-globe"></i></a>
+      </div>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+      </div>
+      <p class="mt-4">&copy; 2025 Akshay Kumar. All rights reserved. | Built with passion for AI</p>
+    </div>
+  </footer>
+
+  <a href="https://drive.google.com/drive/folders/1uOvQ9QLj_OgZN6lv7A9zRqdL3CsIGQt6?usp=drive_link" class="download-resume" title="Download Resume">
+    <i class="fas fa-download"></i>
+    <span>Resume</span>
+  </a>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100
+    });
+
+    // Loader
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loader').classList.add('hidden');
+      }, 300);
+    });
+
+    // Navbar scroll effect
+    const navbar = document.querySelector('.navbar');
+    const darkNavbarBg = 'rgba(15, 23, 42, 0.85)';
+    const lightNavbarBg = 'rgba(255, 255, 255, 0.85)';
+
+    window.addEventListener('scroll', () => {
+      const isDarkTheme = document.body.getAttribute('data-theme') === 'dark';
+      if (window.scrollY > 50) {
+        navbar.style.background = isDarkTheme ? darkNavbarBg.replace('0.85', '0.95') : lightNavbarBg.replace('0.85', '0.95');
+        navbar.style.boxShadow = 'var(--shadow-md)';
+      } else {
+        navbar.style.background = isDarkTheme ? darkNavbarBg : lightNavbarBg;
+        navbar.style.boxShadow = 'var(--shadow-sm)';
+      }
+    });
+
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Active nav link on scroll
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (scrollY >= (sectionTop - 120)) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').slice(1) === current) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Theme toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+    const icon = themeToggle.querySelector('i');
+
+    const updateThemeIcon = (theme) => {
+      icon.classList.toggle('fa-sun', theme === 'dark');
+      icon.classList.toggle('fa-moon', theme === 'light');
+      const isDark = theme === 'dark';
+       navbar.style.background = window.scrollY > 50 ? 
+            (isDark ? darkNavbarBg.replace('0.85', '0.95') : lightNavbarBg.replace('0.85', '0.95')) :
+            (isDark ? darkNavbarBg : lightNavbarBg);
+    };
+    
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    body.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme);
+
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = body.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      body.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateThemeIcon(newTheme);
+    });
+
+    // Typing effect for hero subtitle
+    const subtitle = document.querySelector('.hero-subtitle');
+    if (subtitle) {
+        const text = subtitle.textContent;
+        subtitle.textContent = '';
+        let index = 0;
+        function typeWriter() {
+          if (index < text.length) {
+            subtitle.textContent += text.charAt(index);
+            index++;
+            setTimeout(typeWriter, 50);
+          }
+        }
+        setTimeout(typeWriter, 1000);
+    }
+  </script>
 </body>
 </html>
