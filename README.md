@@ -1,72 +1,83 @@
 # Akshay Kumar
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-akshaysatyam2-blue?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/akshaysatyam2/)
-[![GitHub](https://img.shields.io/badge/GitHub-akshaysatyam2-black?style=flat-square&logo=github)](https://github.com/akshaysatyam2)
-[![Kaggle](https://img.shields.io/badge/Kaggle-akshaysatyam2-orange?style=flat-square&logo=kaggle)](https://www.kaggle.com/akshaysatyam2)
-[![X (Twitter)](https://img.shields.io/badge/X%20(Twitter)-akshaysatyam2-blue?style=flat-square&logo=twitter)](https://twitter.com/akshaysatyam2)
-[![Portfolio](https://img.shields.io/badge/Portfolio-Akshay%20Kumar-green?style=flat-square)](https://akshaysatyam2.github.io/akshaysatyam2/)
-
----
-
-## Professional Dashboard
-
-### **About Me**
-I am a **Applied MLE | Computer Vision Engineer** with expertise in deploying real-time computer vision models on edge devices, developing ChatBots, and building Retrieval-Augmented Generation (RAG) systems for document-based question answering. My primary focus is on enhancing my knowledge and skills in **Computer Vision**, **Natural Language Processing (NLP)**, and **Deep Learning**. I am passionate about solving complex problems and delivering exceptional results in fast-paced and dynamic environments.
-
----
-
-### GitHub Activity & Stats
-
 <div align="center">
-
-<!-- Main stats -->
-<img height="180em" src="https://github-readme-stats.vercel.app/api?username=akshaysatyam2&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&hide_border=true&bg_color=0d1117&title_color=7c3aed&icon_color=7c3aed"/>
-
-<!-- Top languages -->
-<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=akshaysatyam2&layout=compact&langs_count=8&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=7c3aed"/>
+  <a href="https://www.linkedin.com/in/akshaysatyam2/">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
+  </a>
+  <a href="https://github.com/akshaysatyam2">
+    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
+  </a>
+  <a href="https://www.kaggle.com/akshaysatyam2">
+    <img src="https://img.shields.io/badge/Kaggle-20BEFF?style=for-the-badge&logo=kaggle&logoColor=white"/>
+  </a>
+  <a href="https://twitter.com/akshaysatyam2">
+    <img src="https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white"/>
+  </a>
+  <a href="https://akshaysatyam2.github.io/akshaysatyam2/">
+    <img src="https://img.shields.io/badge/Portfolio-00C853?style=for-the-badge&logo=google-chrome&logoColor=white"/>
+  </a>
+</div>
 
 <br/>
 
-<!-- Streak (this one loads slower, but will appear) -->
-<img src="https://streak-stats.demolab.com?user=akshaysatyam2&theme=tokyonight&hide_border=true&background=0d1117&stroke=7c3aed&ring=7c3aed&fire=ff6b6b&currStreakLabel=7c3aed" alt="GitHub Streak"/>
+<div align="center">
+  <img src="https://komarev.com/ghpvc/?username=akshaysatyam2&label=Profile+Views&color=7c3aed&style=flat-square"/>
+</div>
 
-<!-- Profile views -->
-<img src="https://komarev.com/ghpvc/?username=akshaysatyam2&label=Profile+Views&color=7c3aed&style=flat-square"/>
+---
+
+## About Me
+
+**Applied MLE | Computer Vision Engineer**  
+Real-time CV on edge devices • RAG systems • ChatBots • LLMs  
+
+Passionate about turning research into production-grade solutions using **Computer Vision**, **NLP**, and **Deep Learning**.
+
+---
+
+## GitHub Activity & Stats
+
+<div align="center">
+
+<img height="180em" src="https://github-readme-stats.vercel.app/api?username=akshaysatyam2&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&hide_border=true&bg_color=0d1117&title_color=7c3aed&icon_color=7c3aed&cache_seconds=3600"/>
+<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=akshaysatyam2&layout=compact&langs_count=8&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=7c3aed&cache_seconds=3600"/>
+
+<br/><br/>
+
+<img src="https://streak-stats.demolab.com?user=akshaysatyam2&theme=tokyonight&hide_border=true&background=0d1117&stroke=7c3aed&ring=7c3aed&fire=ff6b6b&currStreakLabel=7c3aed&currStreakNum=7c3aed&sideNums=7c3aed&dates=8b9494" />
 
 </div>
 
 ---
 
-### **Skills**
+## Skills
 
-#### **Technical Skills**
-- **Machine Learning & AI**: Computer Vision, NLP, Deep Learning, LLMs, RAG
-- **Languages**: Python, SQL, NoSQL
-- **Technologies**: TensorFlow, OpenCV, YOLO, Docker, Git
-- **Frameworks & Libraries**: Hugging Face Transformers, PandasAI, Scikit-learn
-- **Tools & Platforms**: Kafka, MQTT (HiveMQ), Azure Edge, MediaPipe, GitHub
-
-#### **Cloud & Infrastructure**
-- AWS (Bedrock, Lambda), Azure (AzureEdge), Docker, MLOps
-
-#### **Data Engineering & Development**
-- SQL, NoSQL, Kafka, MQTT, FastAPI, Flask, CI/CD, Linux
+| Category                  | Technologies |
+|---------------------------|------------|
+| **Core ML/AI**            | Computer Vision • NLP • Deep Learning • LLMs • RAG |
+| **Frameworks**            | TensorFlow • PyTorch • OpenCV • YOLO • Hugging Face • LangChain |
+| **Languages**             | Python • SQL • Bash |
+| **Tools & Platforms**      | Docker • Kafka • MQTT • FastAPI • Git • Linux • MediaPipe |
+| **Cloud & Edge**          | AWS (Bedrock, Lambda) • Azure Edge • MLOps • CI/CD |
 
 ---
 
-### **Portfolio**
-Check out my portfolio to explore my projects and work:  
-[![Portfolio](https://img.shields.io/badge/Portfolio-Akshay%20Kumar-green?style=flat-square)](https://akshaysatyam2.github.io/akshaysatyam2/)
+## Portfolio
+
+Check out my live projects →  
+[https://akshaysatyam2.github.io/akshaysatyam2/](https://akshaysatyam2.github.io/akshaysatyam2/)
 
 ---
 
-### **Contact**
+## Let's Connect
 
-- **Email**: [akshaysatyam2003@gmail.com](mailto:akshaysatyam2003@gmail.com)
-- **LinkedIn**: [akshaysatyam2](https://www.linkedin.com/in/akshaysatyam2/)
-- **GitHub**: [akshaysatyam2](https://github.com/akshaysatyam2)
+- Email: akshaysatyam2003@gmail.com
+- LinkedIn: [akshaysatyam2](https://www.linkedin.com/in/akshaysatyam2/)
+- GitHub: [akshaysatyam2](https://github.com/akshaysatyam2)
 
----
+> Always open to collaborations, research discussions, or just a quick chat!
 
-### **Let's Connect!**
-Feel free to reach out for collaborations, discussions, or just to say hi! 😊
+<div align="center">
+  <img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" width="60">
+  <i>"Code. Deploy. Repeat."</i>
+</div>
