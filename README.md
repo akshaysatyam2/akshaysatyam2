@@ -15,14 +15,17 @@ I am a **Applied MLE | Computer Vision Engineer** with expertise in deploying re
 
 ---
 
-### **GitHub Activity**
-<div style="display: flex; flex-wrap: wrap; gap: 10px;">
-  <div style="flex: 1; min-width: 300px;">
-    <img src="https://github-readme-stats.vercel.app/api?username=akshaysatyam2&show_icons=true&theme=dark&hide_border=true" alt="GitHub Stats" style="width: 100%;">
-  </div>
-  <div style="flex: 1; min-width: 300px;">
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=akshaysatyam2&layout=compact&theme=dark&hide_border=true" alt="Top Languages" style="width: 100%;">
-  </div>
+### GitHub Activity & Stats
+
+<div align="center">
+
+<img height="180em" src="https://github-readme-stats.vercel.app/api?username=akshaysatyam2&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&hide_border=true"/>
+<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=akshaysatyam2&layout=compact&langs_count=8&theme=tokyonight&hide_border=true"/>
+
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=akshaysatyam2&theme=tokyonight&hide_border=true" alt="GitHub Streak"/>
+  
+<img src="https://komarev.com/ghpvc/?username=akshaysatyam2&label=Profile+Views&color=7c3aed&style=flat-square" alt="Profile views"/>
+
 </div>
 
 ---
