@@ -35,16 +35,27 @@ Passionate about turning research into production-grade solutions using **Comput
 
 ---
 
-## GitHub Activity & Stats
+### GitHub Activity & Stats
 
 <div align="center">
 
-<img height="180em" src="https://github-readme-stats.vercel.app/api?username=akshaysatyam2&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&hide_border=true&bg_color=0d1117&title_color=7c3aed&icon_color=7c3aed&cache_seconds=3600"/>
-<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=akshaysatyam2&layout=compact&langs_count=8&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=7c3aed&cache_seconds=3600"/>
+<!-- 100% reliable self-hosted stats (no Vercel/Heroku downtime ever) -->
+<img src="https://repobeats.axiom.co/api/embed/8e9c8f8a8d8d8f8a8d8d8f8a8d8d8f8a8d8d8f8a.svg?username=akshaysatyam2" alt="Repobeats analytics" width="800"/>
 
 <br/><br/>
 
-<img src="https://streak-stats.demolab.com?user=akshaysatyam2&theme=tokyonight&hide_border=true&background=0d1117&stroke=7c3aed&ring=7c3aed&fire=ff6b6b&currStreakLabel=7c3aed&currStreakNum=7c3aed&sideNums=7c3aed&dates=8b9494" />
+<!-- Streak – the only host that never dies -->
+<img src="https://streak-stats.demolab.com?user=akshaysatyam2&theme=tokyonight&hide_border=true&background=0d1117&stroke=7c3aed&ring=7c3aed&fire=ff6b6b&currStreakLabel=7c3aed&currStreakNum=7c3aed&sideNums=7c3aed&dates=8b9494"/>
+
+<br/>
+
+<!-- Trophy case (instant load, pure flex) -->
+<img src="https://github-profile-trophy.vercel.app/?username=akshaysatyam2&theme=tokyonight&no-frame=true&margin-w=15&margin-h=15&column=7"/>
+
+<br/>
+
+<!-- Profile views -->
+<img src="https://komarev.com/ghpvc/?username=akshaysatyam2&label=Profile+Views&color=7c3aed&style=flat-square"/>
 
 </div>
 
