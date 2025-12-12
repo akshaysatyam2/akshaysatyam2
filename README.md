@@ -19,12 +19,19 @@ I am a **Applied MLE | Computer Vision Engineer** with expertise in deploying re
 
 <div align="center">
 
-<img height="180em" src="https://github-readme-stats.vercel.app/api?username=akshaysatyam2&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&hide_border=true"/>
-<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=akshaysatyam2&layout=compact&langs_count=8&theme=tokyonight&hide_border=true"/>
+<!-- Main stats -->
+<img height="180em" src="https://github-readme-stats.vercel.app/api?username=akshaysatyam2&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&hide_border=true&bg_color=0d1117&title_color=7c3aed&icon_color=7c3aed"/>
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=akshaysatyam2&theme=tokyonight&hide_border=true" alt="GitHub Streak"/>
-  
-<img src="https://komarev.com/ghpvc/?username=akshaysatyam2&label=Profile+Views&color=7c3aed&style=flat-square" alt="Profile views"/>
+<!-- Top languages -->
+<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=akshaysatyam2&layout=compact&langs_count=8&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=7c3aed"/>
+
+<br/>
+
+<!-- Streak (this one loads slower, but will appear) -->
+<img src="https://streak-stats.demolab.com?user=akshaysatyam2&theme=tokyonight&hide_border=true&background=0d1117&stroke=7c3aed&ring=7c3aed&fire=ff6b6b&currStreakLabel=7c3aed" alt="GitHub Streak"/>
+
+<!-- Profile views -->
+<img src="https://komarev.com/ghpvc/?username=akshaysatyam2&label=Profile+Views&color=7c3aed&style=flat-square"/>
 
 </div>
 
