@@ -40,22 +40,12 @@ Passionate about turning research into production-grade solutions using **Comput
 <div align="center">
 
 <!-- Reliable GitHub Stats -->
-<img src="https://github-readme-stats.vercel.app/api?username=akshaysatyam2&show_icons=true&theme=tokyonight&hide_border=true" alt="GitHub Stats" width="800"/>
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=akshaysatyam2&theme=tokyonight" alt="GitHub Stats" width="800"/>
 
 <br/><br/>
 
 <!-- Streak – the only host that never dies -->
 <img src="https://streak-stats.demolab.com?user=akshaysatyam2&theme=tokyonight&hide_border=true&background=0d1117&stroke=7c3aed&ring=7c3aed&fire=ff6b6b&currStreakLabel=7c3aed&currStreakNum=7c3aed&sideNums=7c3aed&dates=8b9494"/>
-
-<br/>
-
-<!-- Trophy case (instant load, pure flex) -->
-<img src="https://github-profile-trophy.vercel.app/?username=akshaysatyam2&theme=tokyonight&no-frame=true&margin-w=15&margin-h=15&column=7"/>
-
-<br/>
-
-<!-- Profile views -->
-<img src="https://komarev.com/ghpvc/?username=akshaysatyam2&label=Profile+Views&color=7c3aed&style=flat-square"/>
 
 </div>
 
