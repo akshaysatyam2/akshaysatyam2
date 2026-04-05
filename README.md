@@ -28,8 +28,8 @@
 
 ## About Me
 
-**Applied MLE | Computer Vision Engineer**  
-Real-time CV on edge devices • RAG systems • ChatBots • LLMs  
+**Computer Vision Engineer | ML Researcher**  
+Real-time CV on edge devices • Deep Learning • Generative AI • MLOps  
 
 Passionate about turning research into production-grade solutions using **Computer Vision**, **NLP**, and **Deep Learning**.
 
@@ -101,6 +101,51 @@ While modern APIs make it easy to generate images with a single line of code, I 
 <br/>
 
 [**View Code**](https://github.com/akshaysatyam2/diffusion-model)
+
+---
+
+### 📷 YOLO Object Detection Suite
+**Tech Stack:** YOLOv11, Object Detection, Computer Vision
+
+This project focuses on object detection using YOLOv11 and other YOLO models. It automates the process of identifying objects in images, making it useful for various real-world applications like surveillance, quality control, and smart monitoring.
+
+[**View Code**](https://github.com/akshaysatyam2/yolo-for-detection)
+
+---
+
+### 🐾 Multi-Class Object & Text Recognition Pipeline
+**Tech Stack:** Object Detection, OCR, Computer Vision, Python
+
+This project solves a very practical problem by detecting humans and animals in images and videos, classifying them correctly, and optionally running Optical Character Recognition (OCR) on the same media.
+
+[**View Code**](https://github.com/akshaysatyam2/Man-Animal-and-Text)
+
+---
+
+### 🚁 Real-Time Drone Tracking System
+**Tech Stack:** YOLO, SSD, Object Tracking, Computer Vision
+
+An advanced system to detect and track drones effectively using YOLO and SSD (Single Shot MultiBox Detector) object detection models.
+
+[**View Code**](https://github.com/akshaysatyam2/TrackDrones)
+
+---
+
+### 🔳 Robust QR Code Detection
+**Tech Stack:** OpenCV, QR Detection, Computer Vision, Python
+
+A robust QR code detection and decoding pipeline using OpenCV, designed to handle challenging real-world conditions including noisy, rotated, or low-contrast images.
+
+[**View Code**](https://github.com/akshaysatyam2/QRReader)
+
+---
+
+### 🔬 Drone Image Classification Research (CNN vs ResNet50)
+**Tech Stack:** CNN, ResNet50, Deep Learning, Image Classification
+
+This research provides a detailed comparative analysis of two deep learning approaches for drone image classification: standard CNNs and the ResNet50 architecture.
+
+[**View Code**](https://github.com/akshaysatyam2/CNN-vs-ResNet50-Classification)
 
 ---
 
