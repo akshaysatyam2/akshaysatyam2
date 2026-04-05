@@ -39,8 +39,8 @@ Passionate about turning research into production-grade solutions using **Comput
 
 <div align="center">
 
-<!-- 100% reliable self-hosted stats (no Vercel/Heroku downtime ever) -->
-<img src="https://repobeats.axiom.co/api/embed/8e9c8f8a8d8d8f8a8d8d8f8a8d8d8f8a8d8d8f8a.svg?username=akshaysatyam2" alt="Repobeats analytics" width="800"/>
+<!-- Reliable GitHub Stats -->
+<img src="https://github-readme-stats.vercel.app/api?username=akshaysatyam2&show_icons=true&theme=tokyonight&hide_border=true" alt="GitHub Stats" width="800"/>
 
 <br/><br/>
 
@@ -127,6 +127,11 @@ This project solves a very practical problem by detecting humans and animals in 
 
 An advanced system to detect and track drones effectively using YOLO and SSD (Single Shot MultiBox Detector) object detection models.
 
+<div align="center">
+  <img src="https://raw.githubusercontent.com/akshaysatyam2/TrackDrones/main/Task%203/val_batch0_pred.jpg" width="400" />
+</div>
+<br/>
+
 [**View Code**](https://github.com/akshaysatyam2/TrackDrones)
 
 ---
@@ -136,6 +141,12 @@ An advanced system to detect and track drones effectively using YOLO and SSD (Si
 
 A robust QR code detection and decoding pipeline using OpenCV, designed to handle challenging real-world conditions including noisy, rotated, or low-contrast images.
 
+<div align="center">
+  <img src="https://raw.githubusercontent.com/akshaysatyam2/QRReader/main/Outputs/Picture_1_result.jpg" width="200" />
+  <img src="https://raw.githubusercontent.com/akshaysatyam2/QRReader/main/Outputs/Picture_2_result.jpg" width="200" />
+</div>
+<br/>
+
 [**View Code**](https://github.com/akshaysatyam2/QRReader)
 
 ---
@@ -144,6 +155,12 @@ A robust QR code detection and decoding pipeline using OpenCV, designed to handl
 **Tech Stack:** CNN, ResNet50, Deep Learning, Image Classification
 
 This research provides a detailed comparative analysis of two deep learning approaches for drone image classification: standard CNNs and the ResNet50 architecture.
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/akshaysatyam2/CNN-vs-ResNet50-Classification/main/cnn_history.png" width="300" />
+  <img src="https://raw.githubusercontent.com/akshaysatyam2/CNN-vs-ResNet50-Classification/main/resNet_history.png" width="300" />
+</div>
+<br/>
 
 [**View Code**](https://github.com/akshaysatyam2/CNN-vs-ResNet50-Classification)
 
