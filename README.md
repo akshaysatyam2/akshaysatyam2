@@ -73,6 +73,37 @@ Passionate about turning research into production-grade solutions using **Comput
 
 ---
 
+## Featured Projects
+
+### 🧠 Building a Generative Diffusion Engine from Scratch
+**Tech Stack:** Python, PyTorch, OpenCV, Generative AI, Deep Learning
+
+**The Objective:**
+While modern APIs make it easy to generate images with a single line of code, I wanted to deeply understand the fundamental mathematics powering state-of-the-art models like DALL-E and Sora. My goal was to build, debug, and train a Denoising Diffusion Probabilistic Model (DDPM) entirely from scratch using raw PyTorch.
+
+**Technical Architecture & Implementation:**
+- **The U-Net Bottleneck:** I built a custom YOLO-style U-Net equipped with skip connections to preserve spatial integrity. To allow the network to track its exact position in the 1000-step denoising process, I engineered and injected Sinusoidal Position Embeddings directly into the bottleneck.
+- **The Math Schedule:** I implemented the forward diffusion process (adding noise) and the reverse diffusion process (removing noise) using a mathematically rigorous linear beta schedule.
+- **Scaling to Production:** I scaled the model to train on the full 60,000-image MNIST dataset, adjusting tensor operations to handle 32x32 dimensional scaling and massively increasing batch sizes for gradient stability.
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/akshaysatyam2/diffusion-model/main/images/mnist/download.png" width="80" />
+  <img src="https://raw.githubusercontent.com/akshaysatyam2/diffusion-model/main/images/mnist/download%20(1).png" width="80" />
+  <img src="https://raw.githubusercontent.com/akshaysatyam2/diffusion-model/main/images/mnist/download%20(2).png" width="80" />
+  <img src="https://raw.githubusercontent.com/akshaysatyam2/diffusion-model/main/images/mnist/download%20(3).png" width="80" />
+  <img src="https://raw.githubusercontent.com/akshaysatyam2/diffusion-model/main/images/mnist/download%20(4).png" width="80" />
+  <img src="https://raw.githubusercontent.com/akshaysatyam2/diffusion-model/main/images/mnist/download%20(5).png" width="80" />
+  <img src="https://raw.githubusercontent.com/akshaysatyam2/diffusion-model/main/images/mnist/download%20(6).png" width="80" />
+  <img src="https://raw.githubusercontent.com/akshaysatyam2/diffusion-model/main/images/mnist/download%20(7).png" width="80" />
+  <img src="https://raw.githubusercontent.com/akshaysatyam2/diffusion-model/main/images/mnist/download%20(8).png" width="80" />
+  <img src="https://raw.githubusercontent.com/akshaysatyam2/diffusion-model/main/images/mnist/download%20(9).png" width="80" />
+</div>
+<br/>
+
+[**View Code**](https://github.com/akshaysatyam2/diffusion-model)
+
+---
+
 ## Portfolio
 
 Check out my live projects →  
