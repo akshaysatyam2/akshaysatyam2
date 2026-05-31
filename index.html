@@ -831,31 +831,6 @@
       border-top-color: var(--border-gray);
     }
 
-    /* Floating Resume Button */
-    .resume-button {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      background: var(--primary-black);
-      color: var(--pure-white);
-      padding: 1rem 2rem;
-      border-radius: 8px;
-      box-shadow: var(--shadow-dark);
-      text-decoration: none;
-      font-weight: 600;
-      transition: all var(--transition-speed);
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .resume-button:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-hover);
-      color: var(--pure-white);
-    }
-
     /* Responsive Design */
     @media (max-width: 992px) {
       .navbar-nav {
@@ -905,13 +880,6 @@
       
       .skills-container {
         grid-template-columns: 1fr;
-      }
-      
-      .resume-button {
-        bottom: 1rem;
-        right: 1rem;
-        padding: 0.75rem 1.5rem;
-        font-size: 0.925rem;
       }
     }
 
@@ -1629,14 +1597,6 @@
       </div>
     </div>
   </footer>
-
-  <a href="https://drive.google.com/drive/folders/1uOvQ9QLj_OgZN6lv7A9zRqdL3CsIGQt6?usp=drive_link" 
-     class="resume-button" 
-     target="_blank"
-     title="Download Resume">
-    <i class="fas fa-download"></i>
-    <span>Resume</span>
-  </a>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
