@@ -58,7 +58,7 @@ Passionate about building production-grade solutions using **Data Engineering**,
 | **Core ML/AI**            | Computer Vision • NLP • Deep Learning • LLMs • RAG |
 | **Data Engineering**      | PySpark • dbt (data build tool) • Airflow • Kafka • ETL/ELT • Lakehouse |
 | **Frameworks**            | TensorFlow • PyTorch • OpenCV • YOLO • Hugging Face • LangChain |
-| **Languages**             | Python • SQL • Scala |
+| **Languages**             | Python • SQL |
 | **Tools & Platforms**      | Docker • Kubernetes • Terraform • Kafka • MQTT • FastAPI • Git • Linux |
 | **Cloud & Edge**          | AWS (S3, Glue, Redshift, Bedrock, Lambda) • Azure Edge • MLOps • CI/CD |
 
