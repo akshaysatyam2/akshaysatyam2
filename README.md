@@ -66,7 +66,7 @@ Passionate about building production-grade solutions using **Data Engineering**,
 ## Featured Projects
 
 ### 🐾 PupsN Vision System - AI-Powered Pet Analytics
-**Tech Stack:** Python, YOLOv11, OSNet, ONNX Runtime, OpenCV, Flask-SocketIO, HTML5 Canvas
+**Tech Stack:** Python, YOLO26 Nano, OSNet, ONNX Runtime, OpenCV, Flask-SocketIO, HTML5 Canvas
 
 Welcome to the PupsN Vision System. This project is a high-performance, edge-optimized implementation of a pet monitoring system featuring real-time detection, tracking, re-identification, and behavior classification.
 
