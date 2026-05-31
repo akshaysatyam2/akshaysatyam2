@@ -1000,6 +1000,7 @@
           <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
           <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#pupsn">PupsN</a></li>
           <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
           <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
@@ -1021,7 +1022,7 @@
         </div>
       </div>
       <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">Akshay Kumar</h1>
-      <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">Computer Vision Engineer & ML Researcher</p>
+      <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">Computer Vision & Data Engineer</p>
       <p class="hero-description" data-aos="fade-up" data-aos-delay="300">
         Engineering production-ready AI solutions with expertise in Computer Vision, Natural Language Processing, 
         and scalable MLOps infrastructure. Passionate about transforming cutting-edge research into real-world applications.
@@ -1151,7 +1152,96 @@
     </div>
   </section>
 
-  <section id="projects" class="section-alt">
+  <section id="pupsn" class="section-alt">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">PupsN Vision System</h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+        AI-Powered Pet Analytics & Edge Monitoring
+      </p>
+
+      <div class="row align-items-center mb-5">
+        <div class="col-lg-7" data-aos="fade-right">
+          <div class="card p-0 overflow-hidden shadow-lg border-0">
+            <video src="Final_Demo_PupsN_Edge.mp4" controls width="100%" class="d-block"></video>
+          </div>
+        </div>
+        <div class="col-lg-5" data-aos="fade-left">
+          <div class="ps-lg-4 mt-4 mt-lg-0">
+            <h3 class="mb-4">Project Overview</h3>
+            <p class="lead">
+              High-performance, edge-optimized implementation of a pet monitoring system featuring real-time detection, tracking, re-identification, and behavior classification.
+            </p>
+            <p>
+              Utilizes a sophisticated multi-threaded architecture to decouple video streaming from AI inference, ensuring a smooth 30 FPS video feed while pushing AI models to their maximum potential in the background.
+            </p>
+            <div class="mt-4">
+              <a href="https://github.com/akshaysatyam2/PupsN_Edge" target="_blank" class="btn-primary-custom">
+                <i class="fab fa-github me-2"></i>View on GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4 mt-5">
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+          <div class="card h-100">
+            <div class="metric-icon mb-3"><i class="fas fa-microchip"></i></div>
+            <h5 class="text-dark">Edge Optimized</h5>
+            <p class="small text-muted">Runs efficiently on Raspberry Pi & local hardware with custom memory management.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+          <div class="card h-100">
+            <div class="metric-icon mb-3"><i class="fas fa-project-diagram"></i></div>
+            <h5 class="text-dark">Multi-Threaded</h5>
+            <p class="small text-muted">Decoupled visual (30 FPS) and inference layers for zero frame drops.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+          <div class="card h-100">
+            <div class="metric-icon mb-3"><i class="fas fa-brain"></i></div>
+            <h5 class="text-dark">4-Stage AI Pipeline</h5>
+            <p class="small text-muted">Detection, Tracking, Re-ID, and Behavior Classification using ONNX Runtime.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+          <div class="card h-100">
+            <div class="metric-icon mb-3"><i class="fas fa-chart-line"></i></div>
+            <h5 class="text-dark">Rich Analytics</h5>
+            <p class="small text-muted">Interactive dashboard with real-time behavior distribution and activity timelines.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-5" data-aos="fade-up">
+        <div class="card">
+          <div class="row">
+            <div class="col-lg-6">
+              <h4 class="text-dark">🧠 AI Pipeline</h4>
+              <ul class="list-unstyled mt-3">
+                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> <strong>Detection:</strong> YOLO26 Nano (FP32)</li>
+                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> <strong>Tracking:</strong> IoU Tracker with state memory</li>
+                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> <strong>Re-ID:</strong> OSNet 512-dim Cosine Similarity</li>
+                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> <strong>Behavior:</strong> MobileNetV2 Pose Classification</li>
+              </ul>
+            </div>
+            <div class="col-lg-6">
+              <h4 class="text-dark">🛡️ Key Optimizations</h4>
+              <ul class="list-unstyled mt-3">
+                <li class="mb-2"><i class="fas fa-bolt text-warning me-2"></i> Explicit Memory De-allocation (gc.collect)</li>
+                <li class="mb-2"><i class="fas fa-bolt text-warning me-2"></i> RAM Map Caching for SQLite BLOBs</li>
+                <li class="mb-2"><i class="fas fa-bolt text-warning me-2"></i> HTML5 Canvas Base64 rendering</li>
+                <li class="mb-2"><i class="fas fa-bolt text-warning me-2"></i> Hardware Queue Polling isolation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
     <div class="container">
       <h2 class="section-title" data-aos="fade-up">Featured Projects</h2>
       <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
@@ -1405,33 +1495,35 @@
       <div class="skills-container">
         <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
           <div class="skill-category-header">
-            <i class="skill-category-icon fas fa-brain"></i>
-            <h4 class="skill-category-title">Core Technologies</h4>
+            <i class="skill-category-icon fas fa-database"></i>
+            <h4 class="skill-category-title">Data Engineering</h4>
           </div>
           <div class="skills-tags">
-            <span class="skill-tag">Computer Vision</span>
-            <span class="skill-tag">Natural Language Processing</span>
-            <span class="skill-tag">Deep Learning</span>
-            <span class="skill-tag">Machine Learning</span>
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">MLOps</span>
+            <span class="skill-tag">PySpark</span>
+            <span class="skill-tag">dbt (data build tool)</span>
+            <span class="skill-tag">Airflow</span>
+            <span class="skill-tag">Terraform</span>
+            <span class="skill-tag">ETL/ELT</span>
+            <span class="skill-tag">Kafka</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">Lakehouse</span>
           </div>
         </div>
 
         <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
           <div class="skill-category-header">
-            <i class="skill-category-icon fas fa-cogs"></i>
-            <h4 class="skill-category-title">Frameworks & Libraries</h4>
+            <i class="skill-category-icon fas fa-brain"></i>
+            <h4 class="skill-category-title">AI & Machine Learning</h4>
           </div>
           <div class="skills-tags">
-            <span class="skill-tag">TensorFlow</span>
+            <span class="skill-tag">Computer Vision</span>
+            <span class="skill-tag">NLP</span>
+            <span class="skill-tag">Deep Learning</span>
             <span class="skill-tag">PyTorch</span>
+            <span class="skill-tag">TensorFlow</span>
             <span class="skill-tag">OpenCV</span>
-            <span class="skill-tag">FastAPI</span>
-            <span class="skill-tag">Hugging Face</span>
-            <span class="skill-tag">Scikit-learn</span>
-            <span class="skill-tag">LangChain</span>
-            <span class="skill-tag">Streamlit</span>
+            <span class="skill-tag">YOLO</span>
+            <span class="skill-tag">MLOps</span>
           </div>
         </div>
 
@@ -1441,13 +1533,13 @@
             <h4 class="skill-category-title">Tools & Infrastructure</h4>
           </div>
           <div class="skills-tags">
-            <span class="skill-tag">AWS</span>
+            <span class="skill-tag">AWS (S3, Glue, Redshift)</span>
             <span class="skill-tag">Docker</span>
             <span class="skill-tag">Kubernetes</span>
-            <span class="skill-tag">Apache Kafka</span>
+            <span class="skill-tag">FastAPI</span>
             <span class="skill-tag">Git & GitHub</span>
-            <span class="skill-tag">PostgreSQL</span>
-            <span class="skill-tag">MongoDB</span>
+            <span class="skill-tag">Linux</span>
+            <span class="skill-tag">CI/CD</span>
           </div>
         </div>
       </div>
@@ -1663,5 +1755,45 @@
       });
     });
   </script>
+</body>
+</html>
+tml>
+cript>
+</body>
+</html>
+unction updateThemeIcon(theme) {
+      if (theme === 'dark') {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+      } else {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+      }
+    }
+
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = body.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      body.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateThemeIcon(newTheme);
+    });
+
+    // Navbar collapse on mobile after clicking link
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (navbarCollapse.classList.contains('show')) {
+          navbarToggler.click();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+tml>
+cript>
 </body>
 </html>

@@ -28,10 +28,10 @@
 
 ## About Me
 
-**Computer Vision Engineer | ML Researcher**  
-Real-time CV on edge devices • Deep Learning • Generative AI • MLOps  
+**Computer Vision Engineer | Data Engineer | ML Researcher**  
+Real-time CV on edge devices • Scalable Data Pipelines • Deep Learning • MLOps  
 
-Passionate about turning research into production-grade solutions using **Computer Vision**, **NLP**, and **Deep Learning**.
+Passionate about building production-grade solutions using **Data Engineering**, **Computer Vision**, and **Deep Learning**. Expertise in architecting high-performance pipelines and deploying AI at scale.
 
 ---
 
@@ -64,6 +64,99 @@ Passionate about turning research into production-grade solutions using **Comput
 ---
 
 ## Featured Projects
+
+### 🐾 PupsN Vision System - AI-Powered Pet Analytics
+**Tech Stack:** Python, YOLOv11, OSNet, ONNX Runtime, OpenCV, Flask-SocketIO, HTML5 Canvas
+
+Welcome to the PupsN Vision System. This project is a high-performance, edge-optimized implementation of a pet monitoring system featuring real-time detection, tracking, re-identification, and behavior classification.
+
+<div align="center">
+  <video src="Final_Demo_PupsN_Edge.mp4" width="100%" controls></video>
+  <br/>
+  <a href="Final_Demo_PupsN_Edge.mp4">📺 Click here to watch the full demo video</a>
+</div>
+
+#### 🏗️ System Architecture & Topology
+To prevent frame drops and thread exhaustion, every camera stream is managed by two dedicated parallel threads:
+- **stream_worker (Visual Layer):**
+  - Continuously captures frames at native camera speeds.
+  - Layers the latest available AI metadata (bounding boxes, names, behaviors) onto the frame.
+  - Transmits a smooth 30 FPS stream to the frontend via WebSockets.
+- **ai_worker (Inference Layer):**
+  - Runs continuously at maximum CPU potential.
+  - Performs YOLO detection, IoU Tracking, OSNet Re-ID, and Pose Classification.
+  - Updates a shared memory state that the visual layer consumes asynchronously.
+
+#### 🧠 AI Pipeline (ONNX Runtime)
+The application utilizes `onnxruntime` with full graph optimizations to execute a 4-stage pipeline:
+1. **Detection (YOLO26 Nano):** Identifies dogs in the frame with high precision (FP32).
+2. **Persistent Tracking (IoU Tracker):** Assigns unique, persistent IDs to every dog, maintaining state memory across frames.
+3. **Re-Identification (OSNet):** Extracts a 512-dimension vector to match tracked dogs against registered pet profiles using Cosine Similarity.
+4. **Behavior Classification (MobileNetV2):** Performs real-time pose estimation (Sit, Stand, Lie) with Softmax confidence scoring.
+
+#### 📊 Advanced Analytics Dashboard
+The system features a rich, interactive dashboard with:
+- **Global Filters:** Toggle between "Registered Pets", "Unidentified Dogs", or "All Dogs".
+- **Dynamic Timeframes:** View activity for the Past Hour, Today, Past Week, or Monthly.
+- **Visual Graphs:** Real-time Behavior Distribution (Pie Chart) and Activity Timeline (Stacked Bar Chart).
+- **Auto-Capture:** Automatically captures and saves missing profile images for known pets and live snapshots for unidentified intruders.
+
+#### 🚀 Installation & Hardware Setup
+**Prerequisites:**
+- Python 3.9+
+- Linux/macOS/Windows (Tested on Ubuntu/Raspberry Pi OS)
+- A working Web Camera (USB or Built-in) or a valid RTSP stream URL.
+
+1. **Environment Setup:**
+```bash
+# Clone the repository
+git clone git@github.com:akshaysatyam2/PupsN_Edge.git
+cd PupsN_Edge
+
+# Initialize a Virtual Environment to avoid system pollution
+python3 -m venv venv
+source venv/bin/activate  # On Windows use: venv\Scripts\activate
+
+# Install the strict dependencies
+pip install -r requirements.txt
+```
+
+2. **Loading the AI Models (.onnx):**
+Because .onnx files are extremely large binary weights, they are strictly ignored by Git. You must supply your own YOLO Nano and OSNet ONNX exports and place them in the `models/` directory:
+- Place your YOLO ONNX export at: `models/yolo26nano.onnx`
+- Place your OSNet ONNX export at: `models/osnet_x1_0.onnx`
+
+#### 💻 Running the Application
+Once dependencies and models are loaded, execute the main thread:
+```bash
+python app.py
+```
+**Accessing the Feed Locally & Over the Network:**
+The Flask server binds strictly to `0.0.0.0:5000` via Eventlet/SocketIO.
+- **On the Host Machine:** Open a browser to `http://localhost:5000`
+- **Over the Local Network:** Open a browser to `http://<YOUR_LOCAL_IP>:5000`
+
+#### 🛡️ Key Edge Optimizations Built-In
+- **Explicit Memory De-allocation:** Python's native `gc.collect()` is triggered manually at the end of the streaming while-loop, preventing memory fragmentation over days of continuous operation.
+- **RAM Map Caching:** Bypasses SQLite disk lookup latency by serializing BLOB weights back into numpy float32 arrays globally on application boot.
+- **HTML5 Canvas:** Bypasses DOM memory leaks caused by rapid `<img>` src replacements by pushing Base64 JPEGs directly into a Javascript 2D Context render layer.
+- **Hardware Queue Polling:** A secondary background thread isolates `cv2.VideoCapture.read()`, absorbing camera buffer buildup at native FPS while standardizing downstream AI checks to exactly 1.0 seconds (1 FPS) delta-time.
+
+---
+
+### ⚙️ Scalable Data Engineering Pipeline (Lakehouse Architecture)
+**Tech Stack:** PySpark, dbt (data build tool), Terraform, AWS (S3, Glue, Redshift), Airflow, Docker
+
+Designed and implemented a robust, end-to-end data engineering pipeline to handle large-scale data processing and analytics. This project demonstrates expertise in building modern data stacks using the Lakehouse architecture.
+
+**Key Technical Features:**
+- **Infrastructure as Code (IaC):** Leveraged **Terraform** to provision and manage AWS resources (S3 buckets, Redshift clusters, Glue crawlers), ensuring reproducible and scalable environments.
+- **Data Orchestration:** Utilized **Apache Airflow** to schedule and monitor complex ETL workflows, ensuring data consistency and timely availability.
+- **Big Data Processing:** Implemented high-performance data transformations using **PySpark**, handling multi-terabyte datasets with optimized partition strategies.
+- **Data Modeling & Transformation:** Employed **dbt** for modular, version-controlled SQL transformations within the data warehouse, implementing rigorous testing and documentation.
+- **Lakehouse Architecture:** Built a unified platform for both BI and AI by combining the low-cost storage of S3 with the high-performance querying of Redshift, managed by AWS Glue Catalog.
+
+---
 
 ### 🧠 Building a Generative Diffusion Engine from Scratch
 **Tech Stack:** Python, PyTorch, OpenCV, Generative AI, Deep Learning
