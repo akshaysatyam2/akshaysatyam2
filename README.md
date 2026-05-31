@@ -56,10 +56,11 @@ Passionate about building production-grade solutions using **Data Engineering**,
 | Category                  | Technologies |
 |---------------------------|------------|
 | **Core ML/AI**            | Computer Vision • NLP • Deep Learning • LLMs • RAG |
+| **Data Engineering**      | PySpark • dbt (data build tool) • Airflow • Kafka • ETL/ELT • Lakehouse |
 | **Frameworks**            | TensorFlow • PyTorch • OpenCV • YOLO • Hugging Face • LangChain |
-| **Languages**             | Python • SQL • Bash |
-| **Tools & Platforms**      | Docker • Kafka • MQTT • FastAPI • Git • Linux • MediaPipe |
-| **Cloud & Edge**          | AWS (Bedrock, Lambda) • Azure Edge • MLOps • CI/CD |
+| **Languages**             | Python • SQL • Scala |
+| **Tools & Platforms**      | Docker • Kubernetes • Terraform • Kafka • MQTT • FastAPI • Git • Linux |
+| **Cloud & Edge**          | AWS (S3, Glue, Redshift, Bedrock, Lambda) • Azure Edge • MLOps • CI/CD |
 
 ---
 
@@ -68,7 +69,8 @@ Passionate about building production-grade solutions using **Data Engineering**,
 ### 🐾 PupsN Vision System - AI-Powered Pet Analytics
 **Tech Stack:** Python, YOLO26 Nano, OSNet, ONNX Runtime, OpenCV, Flask-SocketIO, HTML5 Canvas
 
-Welcome to the PupsN Vision System. This project is a high-performance, edge-optimized implementation of a pet monitoring system featuring real-time detection, tracking, re-identification, and behavior classification.
+**The Objective:**
+Traditional pet monitoring systems are often limited by high latency and static analysis. My goal was to build a high-performance, edge-optimized system capable of real-time detection, persistent tracking, and behavior classification, ensuring a smooth 30 FPS visual experience even on resource-constrained hardware.
 
 <div align="center">
   <video src="Final_Demo_PupsN_Edge.mp4" width="100%" controls></video>
@@ -76,71 +78,10 @@ Welcome to the PupsN Vision System. This project is a high-performance, edge-opt
   <a href="Final_Demo_PupsN_Edge.mp4">📺 Click here to watch the full demo video</a>
 </div>
 
-#### 🏗️ System Architecture & Topology
-To prevent frame drops and thread exhaustion, every camera stream is managed by two dedicated parallel threads:
-- **stream_worker (Visual Layer):**
-  - Continuously captures frames at native camera speeds.
-  - Layers the latest available AI metadata (bounding boxes, names, behaviors) onto the frame.
-  - Transmits a smooth 30 FPS stream to the frontend via WebSockets.
-- **ai_worker (Inference Layer):**
-  - Runs continuously at maximum CPU potential.
-  - Performs YOLO detection, IoU Tracking, OSNet Re-ID, and Pose Classification.
-  - Updates a shared memory state that the visual layer consumes asynchronously.
-
-#### 🧠 AI Pipeline (ONNX Runtime)
-The application utilizes `onnxruntime` with full graph optimizations to execute a 4-stage pipeline:
-1. **Detection (YOLO26 Nano):** Identifies dogs in the frame with high precision (FP32).
-2. **Persistent Tracking (IoU Tracker):** Assigns unique, persistent IDs to every dog, maintaining state memory across frames.
-3. **Re-Identification (OSNet):** Extracts a 512-dimension vector to match tracked dogs against registered pet profiles using Cosine Similarity.
-4. **Behavior Classification (MobileNetV2):** Performs real-time pose estimation (Sit, Stand, Lie) with Softmax confidence scoring.
-
-#### 📊 Advanced Analytics Dashboard
-The system features a rich, interactive dashboard with:
-- **Global Filters:** Toggle between "Registered Pets", "Unidentified Dogs", or "All Dogs".
-- **Dynamic Timeframes:** View activity for the Past Hour, Today, Past Week, or Monthly.
-- **Visual Graphs:** Real-time Behavior Distribution (Pie Chart) and Activity Timeline (Stacked Bar Chart).
-- **Auto-Capture:** Automatically captures and saves missing profile images for known pets and live snapshots for unidentified intruders.
-
-#### 🚀 Installation & Hardware Setup
-**Prerequisites:**
-- Python 3.9+
-- Linux/macOS/Windows (Tested on Ubuntu/Raspberry Pi OS)
-- A working Web Camera (USB or Built-in) or a valid RTSP stream URL.
-
-1. **Environment Setup:**
-```bash
-# Clone the repository
-git clone git@github.com:akshaysatyam2/PupsN_Edge.git
-cd PupsN_Edge
-
-# Initialize a Virtual Environment to avoid system pollution
-python3 -m venv venv
-source venv/bin/activate  # On Windows use: venv\Scripts\activate
-
-# Install the strict dependencies
-pip install -r requirements.txt
-```
-
-2. **Loading the AI Models (.onnx):**
-Because .onnx files are extremely large binary weights, they are strictly ignored by Git. You must supply your own YOLO Nano and OSNet ONNX exports and place them in the `models/` directory:
-- Place your YOLO ONNX export at: `models/yolo26nano.onnx`
-- Place your OSNet ONNX export at: `models/osnet_x1_0.onnx`
-
-#### 💻 Running the Application
-Once dependencies and models are loaded, execute the main thread:
-```bash
-python app.py
-```
-**Accessing the Feed Locally & Over the Network:**
-The Flask server binds strictly to `0.0.0.0:5000` via Eventlet/SocketIO.
-- **On the Host Machine:** Open a browser to `http://localhost:5000`
-- **Over the Local Network:** Open a browser to `http://<YOUR_LOCAL_IP>:5000`
-
-#### 🛡️ Key Edge Optimizations Built-In
-- **Explicit Memory De-allocation:** Python's native `gc.collect()` is triggered manually at the end of the streaming while-loop, preventing memory fragmentation over days of continuous operation.
-- **RAM Map Caching:** Bypasses SQLite disk lookup latency by serializing BLOB weights back into numpy float32 arrays globally on application boot.
-- **HTML5 Canvas:** Bypasses DOM memory leaks caused by rapid `<img>` src replacements by pushing Base64 JPEGs directly into a Javascript 2D Context render layer.
-- **Hardware Queue Polling:** A secondary background thread isolates `cv2.VideoCapture.read()`, absorbing camera buffer buildup at native FPS while standardizing downstream AI checks to exactly 1.0 seconds (1 FPS) delta-time.
+**Technical Architecture & Implementation:**
+- **Multi-Threaded Decoupling:** I architected a dual-thread system to prevent frame drops. The `stream_worker` manages the 30 FPS visual layer via WebSockets, while the `ai_worker` executes the heavy inference pipeline asynchronously at maximum CPU potential.
+- **4-Stage ONNX Pipeline:** I implemented an optimized pipeline using `onnxruntime` featuring YOLO26 Nano for detection, a stateful IoU Tracker for persistent ID assignment, OSNet for pet re-identification, and MobileNetV2 for real-time behavior classification (Sit, Stand, Lie).
+- **Edge-First Optimizations:** To ensure long-term stability on devices like Raspberry Pi, I integrated manual memory management (gc.collect), RAM-cached SQLite lookups for zero-latency weight serialization, and HTML5 Canvas rendering to bypass DOM-based memory leaks.
 
 ---
 
