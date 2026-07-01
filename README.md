@@ -69,6 +69,14 @@ High-accuracy object detection pipelines for real-world environments, tackling e
   <img src="https://raw.githubusercontent.com/akshaysatyam2/TrackDrones/main/Task%203/val_batch0_pred.jpg" width="400"/>
 </div>
 
+#### 🔳 Robust QR Code Detection
+A robust QR code detection and decoding pipeline using OpenCV, designed to handle challenging real-world conditions including noisy, rotated, or low-contrast images.
+<br/>
+<div align="center">
+  <img src="https://raw.githubusercontent.com/akshaysatyam2/QRReader/main/Outputs/Picture_1_result.jpg" width="300"/>
+  <img src="https://raw.githubusercontent.com/akshaysatyam2/QRReader/main/Outputs/Picture_2_result.jpg" width="300"/>
+</div>
+
 #### 🆔 Custom Biometrics & OCR
 Facial recognition and OCR engines designed from the ground up, focusing on custom architectures rather than high-level abstractions.
 
