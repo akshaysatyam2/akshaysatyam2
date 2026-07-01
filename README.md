@@ -63,8 +63,9 @@ I build intelligent vision systems and the scalable data platforms that power th
 ### GitHub Activity
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=akshaysatyam2&show_icons=true&theme=tokyonight&hide_border=true" alt="GitHub Stats" width="48%"/>
-  <img src="https://streak-stats.demolab.com?user=akshaysatyam2&theme=tokyonight&hide_border=true&background=0d1117&stroke=00f0ff&ring=00f0ff&fire=00f0ff&currStreakLabel=00f0ff&currStreakNum=00f0ff&sideNums=00f0ff&dates=8b9494" alt="GitHub Streak" width="48%"/>
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=akshaysatyam2&theme=tokyonight" alt="GitHub Stats" width="800"/>
+  <br/><br/>
+  <img src="https://streak-stats.demolab.com?user=akshaysatyam2&theme=tokyonight&hide_border=true&background=0d1117&stroke=00f0ff&ring=00f0ff&fire=00f0ff&currStreakLabel=00f0ff&currStreakNum=00f0ff&sideNums=00f0ff&dates=8b9494" alt="GitHub Streak" width="800"/>
 </div>
 
 ---
