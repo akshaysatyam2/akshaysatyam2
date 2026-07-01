@@ -25,9 +25,9 @@
 
 ## About Me
 
-**Computer Vision Engineer | Machine Learning Researcher | Data Engineer**  
+**Computer Vision Engineer | Machine Learning Researcher**  
 
-I build intelligent vision systems and the scalable data platforms that power them. Passionate about bringing AI out of the lab and into the real world, I specialize in solving complex problems across Computer Vision, Generative AI, and distributed data architectures.
+I build intelligent vision systems and the machine learning models that power them. Passionate about bringing AI out of the lab and into the real world, I specialize in solving complex problems across Computer Vision, Edge AI, and Generative AI.
 
 > 🌐 **Check out my full interactive portfolio:** [akshaysatyam2.github.io/akshaysatyam2](https://akshaysatyam2.github.io/akshaysatyam2/)
 
@@ -35,9 +35,8 @@ I build intelligent vision systems and the scalable data platforms that power th
 
 ## 👁️ Core Expertise
 
-- **Computer Vision (1°):** Edge AI, Object Detection, Generative Models, Biometrics.
-- **Machine Learning (2°):** LLMs, RAG, Deep Learning, MLOps.
-- **Data Engineering (3°):** Lakehouse Architecture, Cloud Infrastructure, Scalable ETL.
+- **Computer Vision:** Edge AI, Object Detection & Tracking, Generative Models, Biometrics, Real-time Analysis.
+- **Machine Learning:** LLMs, RAG, Deep Learning, MLOps, NLP.
 
 ---
 
@@ -45,18 +44,38 @@ I build intelligent vision systems and the scalable data platforms that power th
 
 ### 1. Computer Vision & Edge AI
 
-- **🐾 PupsN Vision System:** A real-time, edge-optimized AI system for pet monitoring and behavior analysis. Engineered to run flawlessly on resource-constrained hardware.
-- **🧠 Generative Diffusion Engine:** A Denoising Diffusion Probabilistic Model (DDPM) built entirely from scratch to deeply understand the mathematics behind modern AI image generation.
-- **🚁 Smart Tracking Systems:** High-accuracy object detection pipelines for real-world environments, tackling everything from smart city traffic violations to robust drone tracking.
-- **🆔 Custom Biometrics & OCR:** Facial recognition and OCR engines designed from the ground up, focusing on custom architectures rather than high-level abstractions.
+#### 🐾 PupsN Vision System
+A real-time, edge-optimized AI system for pet monitoring and behavior analysis. Engineered to run flawlessly on resource-constrained hardware.
+<br/>
+<div align="center">
+  <video src="Final_Demo_PupsN_Edge.mp4" width="100%" controls></video>
+</div>
+
+#### 🧠 Generative Diffusion Engine from Scratch
+A Denoising Diffusion Probabilistic Model (DDPM) built entirely from scratch to deeply understand the mathematics behind modern AI image generation.
+<br/>
+<div align="center">
+  <img src="https://raw.githubusercontent.com/akshaysatyam2/diffusion-model/main/images/mnist/download.png" width="80"/>
+  <img src="https://raw.githubusercontent.com/akshaysatyam2/diffusion-model/main/images/mnist/download%20(1).png" width="80"/>
+  <img src="https://raw.githubusercontent.com/akshaysatyam2/diffusion-model/main/images/mnist/download%20(2).png" width="80"/>
+  <img src="https://raw.githubusercontent.com/akshaysatyam2/diffusion-model/main/images/mnist/download%20(3).png" width="80"/>
+  <img src="https://raw.githubusercontent.com/akshaysatyam2/diffusion-model/main/images/mnist/download%20(4).png" width="80"/>
+</div>
+
+#### 🚁 Real-Time Drone & Smart Tracking
+High-accuracy object detection pipelines for real-world environments, tackling everything from smart city traffic violations to robust drone tracking.
+<br/>
+<div align="center">
+  <img src="https://raw.githubusercontent.com/akshaysatyam2/TrackDrones/main/Task%203/val_batch0_pred.jpg" width="400"/>
+</div>
+
+#### 🆔 Custom Biometrics & OCR
+Facial recognition and OCR engines designed from the ground up, focusing on custom architectures rather than high-level abstractions.
 
 ### 2. Machine Learning & NLP
 
-- **📚 RAG Model Framework:** An open-source Retrieval-Augmented Generation framework designed for seamless, context-aware document querying and interaction.
-
-### 3. Data Engineering & Infrastructure
-
-- **⚙️ Scalable Lakehouse Pipeline:** An end-to-end cloud data platform capable of orchestrating multi-terabyte datasets, bridging the gap between business analytics and AI.
+#### 📚 RAG Model Framework
+An open-source Retrieval-Augmented Generation framework designed for seamless, context-aware document querying and interaction.
 
 ---
 
@@ -72,7 +91,7 @@ I build intelligent vision systems and the scalable data platforms that power th
 
 ## 📬 Let's Connect
 
-Looking to collaborate on cutting-edge vision systems or scalable AI platforms? Let's talk.
+Looking to collaborate on cutting-edge vision systems or machine learning projects? Let's talk.
 
 - **Email:** akshaysatyam2003@gmail.com
 - **LinkedIn:** [akshaysatyam2](https://www.linkedin.com/in/akshaysatyam2/)

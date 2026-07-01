@@ -22,7 +22,6 @@
       --text-muted: #9ca3af;
       --accent-cv: #00f0ff;      /* Cyan for CV */
       --accent-ml: #b026ff;      /* Purple for ML */
-      --accent-de: #00ff66;      /* Green for DE */
       --border-color: #262626;
       --font-body: 'Inter', sans-serif;
       --font-heading: 'Outfit', sans-serif;
@@ -246,6 +245,7 @@
       position: relative;
       overflow: hidden;
       transition: all 0.3s;
+      z-index: 10;
     }
 
     .btn:hover {
@@ -257,6 +257,7 @@
       display: flex;
       gap: 1.5rem;
       margin-top: 3rem;
+      z-index: 10;
     }
 
     .social-links a {
@@ -301,7 +302,6 @@
     }
 
     .skill-card.ml::before { background: var(--accent-ml); }
-    .skill-card.de::before { background: var(--accent-de); }
 
     .skill-card:hover {
       transform: translateY(-5px);
@@ -320,7 +320,6 @@
     
     .skill-card.cv .skill-icon { color: var(--accent-cv); }
     .skill-card.ml .skill-icon { color: var(--accent-ml); }
-    .skill-card.de .skill-icon { color: var(--accent-de); }
 
     .skill-card h3 {
       font-size: 1.5rem;
@@ -367,6 +366,13 @@
       align-items: center;
       justify-content: center;
     }
+    
+    .project-visual video, .project-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
 
     .project-visual::after {
       content: '';
@@ -376,9 +382,9 @@
       opacity: 0;
       transition: opacity 0.3s;
       pointer-events: none;
+      z-index: 2;
     }
     .project-row.ml .project-visual::after { background: rgba(176,38,255,0.1); }
-    .project-row.de .project-visual::after { background: rgba(0,255,102,0.1); }
 
     .project-visual:hover::after { opacity: 1; }
 
@@ -392,6 +398,7 @@
       opacity: 0;
       transition: all 0.3s;
       pointer-events: none;
+      z-index: 3;
     }
     
     .project-visual:hover .bounding-box {
@@ -414,7 +421,6 @@
     }
     .project-row.cv .project-type { color: var(--accent-cv); }
     .project-row.ml .project-type { color: var(--accent-ml); }
-    .project-row.de .project-type { color: var(--accent-de); }
 
     .project-desc {
       background: var(--bg-surface);
@@ -431,6 +437,8 @@
       display: flex;
       gap: 1.5rem;
       margin-top: 1.5rem;
+      z-index: 10;
+      position: relative;
     }
     
     .project-links a {
@@ -441,7 +449,6 @@
     
     .project-row.cv .project-links a:hover { color: var(--accent-cv); }
     .project-row.ml .project-links a:hover { color: var(--accent-ml); }
-    .project-row.de .project-links a:hover { color: var(--accent-de); }
 
     /* Footer */
     footer {
@@ -451,6 +458,18 @@
       font-family: var(--font-mono);
       color: var(--text-muted);
       font-size: 0.9rem;
+    }
+    
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4px;
+      width: 100%;
+      height: 100%;
+      padding: 4px;
+    }
+    .media-grid img {
+      border-radius: 4px;
     }
   </style>
 </head>
@@ -481,7 +500,7 @@
         I build <span class="typewriter-text" id="typewriter"></span>
       </div>
       <p>
-        I specialize in bringing artificial intelligence out of the lab and into the real world. From intelligent vision systems to the scalable data platforms that power them, I build technology that makes an impact.
+        I specialize in bringing artificial intelligence out of the lab and into the real world. From intelligent vision systems to the robust machine learning models that power them, I build technology that makes an impact.
       </p>
       <div>
         <a href="#work" class="btn hover-target">See What I've Built</a>
@@ -513,14 +532,6 @@
           </p>
         </div>
 
-        <div class="skill-card de hover-target">
-          <i class="fas fa-database skill-icon"></i>
-          <h3>Data Engineering</h3>
-          <p>
-            Architecting the backbone for AI. Building robust, scalable cloud infrastructure and data pipelines that handle massive throughput seamlessly.
-          </p>
-        </div>
-
       </div>
     </section>
 
@@ -530,7 +541,7 @@
       
       <div class="projects-container">
         
-        <!-- CV Project 1 -->
+        <!-- CV Project 1 (PupsN Vision) -->
         <div class="project-row cv">
           <div class="project-content">
             <span class="project-type">Computer Vision / Edge AI</span>
@@ -544,11 +555,11 @@
           </div>
           <div class="project-visual hover-target">
             <div class="bounding-box"></div>
-            <i class="fas fa-dog" style="font-size: 4rem; color: rgba(0,240,255,0.3)"></i>
+            <video src="Final_Demo_PupsN_Edge.mp4" autoplay loop muted playsinline></video>
           </div>
         </div>
 
-        <!-- CV Project 2 -->
+        <!-- CV Project 2 (Diffusion Model) -->
         <div class="project-row cv">
           <div class="project-content">
             <span class="project-type">Generative AI</span>
@@ -561,11 +572,39 @@
             </div>
           </div>
           <div class="project-visual hover-target">
-            <i class="fas fa-wand-magic-sparkles" style="font-size: 4rem; color: rgba(0,240,255,0.3)"></i>
+            <div class="media-grid">
+              <img src="https://raw.githubusercontent.com/akshaysatyam2/diffusion-model/main/images/mnist/download.png" alt="Digit">
+              <img src="https://raw.githubusercontent.com/akshaysatyam2/diffusion-model/main/images/mnist/download%20(1).png" alt="Digit">
+              <img src="https://raw.githubusercontent.com/akshaysatyam2/diffusion-model/main/images/mnist/download%20(2).png" alt="Digit">
+              <img src="https://raw.githubusercontent.com/akshaysatyam2/diffusion-model/main/images/mnist/download%20(3).png" alt="Digit">
+              <img src="https://raw.githubusercontent.com/akshaysatyam2/diffusion-model/main/images/mnist/download%20(4).png" alt="Digit">
+              <img src="https://raw.githubusercontent.com/akshaysatyam2/diffusion-model/main/images/mnist/download%20(5).png" alt="Digit">
+              <img src="https://raw.githubusercontent.com/akshaysatyam2/diffusion-model/main/images/mnist/download%20(6).png" alt="Digit">
+              <img src="https://raw.githubusercontent.com/akshaysatyam2/diffusion-model/main/images/mnist/download%20(7).png" alt="Digit">
+              <img src="https://raw.githubusercontent.com/akshaysatyam2/diffusion-model/main/images/mnist/download%20(8).png" alt="Digit">
+            </div>
+          </div>
+        </div>
+        
+        <!-- CV Project 3 (Drone Tracking) -->
+        <div class="project-row cv">
+          <div class="project-content">
+            <span class="project-type">Computer Vision</span>
+            <h3>Real-Time Drone Tracking System</h3>
+            <div class="project-desc">
+              <p>An advanced system to detect and track drones effectively using YOLO and SSD object detection models under challenging field conditions.</p>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/akshaysatyam2/TrackDrones" target="_blank" class="hover-target"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <div class="project-visual hover-target">
+            <div class="bounding-box"></div>
+            <img src="https://raw.githubusercontent.com/akshaysatyam2/TrackDrones/main/Task%203/val_batch0_pred.jpg" alt="Drone Tracking">
           </div>
         </div>
 
-        <!-- ML Project 1 -->
+        <!-- ML Project 1 (RAG Framework) -->
         <div class="project-row ml">
           <div class="project-content">
             <span class="project-type">Machine Learning</span>
@@ -582,23 +621,6 @@
           </div>
         </div>
 
-        <!-- DE Project -->
-        <div class="project-row de">
-          <div class="project-content">
-            <span class="project-type">Data Engineering</span>
-            <h3>Cloud Lakehouse Pipeline</h3>
-            <div class="project-desc">
-              <p>A highly scalable data pipeline built to bridge the gap between raw data and AI. Orchestrates massive amounts of information safely and efficiently in the cloud.</p>
-            </div>
-            <div class="project-links">
-              <a href="#" class="hover-target" title="Infrastructure Repo"><i class="fas fa-server"></i></a>
-            </div>
-          </div>
-          <div class="project-visual hover-target">
-            <i class="fas fa-cloud" style="font-size: 4rem; color: rgba(0,255,102,0.3)"></i>
-          </div>
-        </div>
-
       </div>
     </section>
   </div>
@@ -607,7 +629,7 @@
     <div class="container">
       <p>Let's build something amazing together.</p>
       <div style="margin-top: 1rem;">
-        <a href="mailto:akshaysatyam2003@gmail.com" style="color: var(--accent-cv); text-decoration: none;">Get in touch &rarr;</a>
+        <a href="mailto:akshaysatyam2003@gmail.com" style="color: var(--accent-cv); text-decoration: none; position: relative; z-index: 10;">Get in touch &rarr;</a>
       </div>
     </div>
   </footer>
@@ -640,7 +662,7 @@
     const phrases = [
       "intelligent vision systems.",
       "ideas into products.",
-      "data platforms that scale."
+      "machine learning models."
     ];
     let phraseIndex = 0;
     let charIndex = 0;
