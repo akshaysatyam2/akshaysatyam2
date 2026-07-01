@@ -77,6 +77,16 @@ A robust QR code detection and decoding pipeline using OpenCV, designed to handl
   <img src="https://raw.githubusercontent.com/akshaysatyam2/QRReader/main/Outputs/Picture_2_result.jpg" width="300"/>
 </div>
 
+#### 🌐 3D Computer Vision & Multi-View Geometry
+An end-to-end implementation of 3D vision concepts, from manually computing epipolar geometry to building a PointNet from scratch and deploying real-time LiDAR point cloud processing.
+<br/>
+<div align="center">
+  <img src="https://raw.githubusercontent.com/akshaysatyam2/3DCV/master/5_Object_Detection_2D_vs_3D/output_comparison.png" width="400"/>
+</div>
+
+#### 🕵️ AI Proctoring System
+A smart surveillance system leveraging YOLO and MediaPipe pose estimation to track head orientation and detect suspicious behavior during exams.
+
 #### 🆔 Custom Biometrics & OCR
 Facial recognition and OCR engines designed from the ground up, focusing on custom architectures rather than high-level abstractions.
 
@@ -84,6 +94,9 @@ Facial recognition and OCR engines designed from the ground up, focusing on cust
 
 #### 📚 RAG Model Framework
 An open-source Retrieval-Augmented Generation framework designed for seamless, context-aware document querying and interaction.
+
+#### 🤖 ChatWithMe Conversational AI
+A conversational AI application powered by a fine-tuned GPT-2 model to clone personal chatting styles, complete with an interactive Streamlit interface.
 
 ---
 
