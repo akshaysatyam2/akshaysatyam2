@@ -44,6 +44,15 @@ I build intelligent vision systems and the machine learning models that power th
 
 ### 1. Computer Vision & Edge AI
 
+#### 🚀 SegStream: AI-Powered Virtual Green Screen
+A lightweight, fully native alternative to OBS Studio that eliminates the need for physical green screens. It uses WebRTC for capture and pipes it into a custom async Python backend, utilizing YOLO26 Nano Segmentation and ONNX Runtime (CUDA/OpenVINO) for real-time, hardware-accelerated alpha compositing at 30-60 FPS.
+<br/>
+<div align="center">
+  <video src="SegStream-Demo_and_Walkthrough.webm" width="100%" controls></video>
+  <br/>
+  <a href="https://github.com/akshaysatyam2/SegStream"><strong>🔗 View SegStream Repository</strong></a>
+</div>
+
 #### 🐾 PupsN Vision System
 A real-time, edge-optimized AI system for pet monitoring and behavior analysis. Engineered to run flawlessly on resource-constrained hardware.
 <br/>
@@ -78,10 +87,14 @@ A robust QR code detection and decoding pipeline using OpenCV, designed to handl
 </div>
 
 #### 🌐 3D Computer Vision & Multi-View Geometry
-An end-to-end implementation of 3D vision concepts, from manually computing epipolar geometry to building a PointNet from scratch and deploying real-time LiDAR point cloud processing.
+A comprehensive journey through 3D vision concepts, moving from epipolar geometry and PointNet architectures to real-time LiDAR point cloud processing. Includes a production-ready pipeline using YOLO26 to perform 2D detection and project it into 3D space with depth estimation for real-time 4K video tracking.
 <br/>
 <div align="center">
+  <video src="3dcv-output.mp4" width="100%" controls></video>
+  <br/>
   <img src="https://raw.githubusercontent.com/akshaysatyam2/3DCV/master/5_Object_Detection_2D_vs_3D/output_comparison.png" width="400"/>
+  <br/>
+  <a href="https://github.com/akshaysatyam2/3DCV"><strong>🔗 View 3DCV Repository</strong></a>
 </div>
 
 #### 🕵️ AI Proctoring System
