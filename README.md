@@ -48,7 +48,7 @@ I build intelligent vision systems and the machine learning models that power th
 A lightweight, fully native alternative to OBS Studio that eliminates the need for physical green screens. It uses WebRTC for capture and pipes it into a custom async Python backend, utilizing YOLO26 Nano Segmentation and ONNX Runtime (CUDA/OpenVINO) for real-time, hardware-accelerated alpha compositing at 30-60 FPS.
 <br/>
 <div align="center">
-  <video src="SegStream-Demo_and_Walkthrough.webm" width="100%" controls></video>
+  <video src="media/videos/SegStream-Demo_and_Walkthrough.webm" width="100%" controls></video>
   <br/>
   <a href="https://github.com/akshaysatyam2/SegStream"><strong>🔗 View SegStream Repository</strong></a>
 </div>
@@ -57,7 +57,7 @@ A lightweight, fully native alternative to OBS Studio that eliminates the need f
 A real-time, edge-optimized AI system for pet monitoring and behavior analysis. Engineered to run flawlessly on resource-constrained hardware.
 <br/>
 <div align="center">
-  <video src="Final_Demo_PupsN_Edge.mp4" width="100%" controls></video>
+  <video src="media/videos/Final_Demo_PupsN_Edge.mp4" width="100%" controls></video>
 </div>
 
 #### 🧠 Generative Diffusion Engine from Scratch
@@ -90,7 +90,7 @@ A robust QR code detection and decoding pipeline using OpenCV, designed to handl
 A comprehensive journey through 3D vision concepts, moving from epipolar geometry and PointNet architectures to real-time LiDAR point cloud processing. Includes a production-ready pipeline using YOLO26 to perform 2D detection and project it into 3D space with depth estimation for real-time 4K video tracking.
 <br/>
 <div align="center">
-  <video src="3dcv-output.mp4" width="100%" controls></video>
+  <video src="media/videos/3dcv-output.mp4" width="100%" controls></video>
   <br/>
   <img src="https://raw.githubusercontent.com/akshaysatyam2/3DCV/master/5_Object_Detection_2D_vs_3D/output_comparison.png" width="400"/>
   <br/>
