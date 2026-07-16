@@ -75,15 +75,15 @@ A Denoising Diffusion Probabilistic Model (DDPM) built entirely from scratch to 
 High-accuracy object detection pipelines for real-world environments, tackling everything from smart city traffic violations to robust drone tracking.
 <br/>
 <div align="center">
-  <img src="https://raw.githubusercontent.com/akshaysatyam2/TrackDrones/main/Task%203/val_batch0_pred.jpg" width="400"/>
+  <img src="https://raw.githubusercontent.com/akshaysatyam2/TrackDrones/master/Task%203/val_batch0_pred.jpg" width="400"/>
 </div>
 
 #### 🔳 Robust QR Code Detection
 A robust QR code detection and decoding pipeline using OpenCV, designed to handle challenging real-world conditions including noisy, rotated, or low-contrast images.
 <br/>
 <div align="center">
-  <img src="https://raw.githubusercontent.com/akshaysatyam2/QRReader/main/Outputs/Picture_1_result.jpg" width="300"/>
-  <img src="https://raw.githubusercontent.com/akshaysatyam2/QRReader/main/Outputs/Picture_2_result.jpg" width="300"/>
+  <img src="https://raw.githubusercontent.com/akshaysatyam2/QRReader/master/Outputs/Picture_1_result.jpg" width="300"/>
+  <img src="https://raw.githubusercontent.com/akshaysatyam2/QRReader/master/Outputs/Picture_2_result.jpg" width="300"/>
 </div>
 
 #### 🌐 3D Computer Vision & Multi-View Geometry
